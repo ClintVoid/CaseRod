@@ -23,5 +23,41 @@ namespace CaseRod.Controllers
 
             return View(Model);
         }
+
+        public ActionResult CreateBlade()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateBlade([Bind(Include="BladeID,Name,PartNumber,Image,Weight,Price")] Blade blade)
+        {
+            if(ModelState.IsValid)
+            {
+                _database.Blades.Add(blade);
+                _database.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(blade);
+        }
+
+        public ActionResult CreateHandle()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateHandle([Bind(Include = "BladeID,Name,PartNumber,Image,Weight,Price")] Handle handle)
+        {
+            if (ModelState.IsValid)
+            {
+                _database.Handles.Add(handle);
+                _database.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(handle);
+        }
     }
 }

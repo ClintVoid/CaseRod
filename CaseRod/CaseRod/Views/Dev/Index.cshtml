@@ -1,8 +1,96 @@
-﻿
+﻿@model CaseRod.ViewModels.DevViewModel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Index</h2>
-
+@{
+    var Blade = Model.Blades;
+}
+<h2>Development</h2>
+<legend>Blades</legend>
+<p>
+    @Html.ActionLink("Add Blade", "CreateBlade", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-hover table-bordered table-striped" style="text-align:center">
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Blades.First().Name)</td>
+            <td>@Html.DisplayNameFor(model => model.Blades.First().Price)</td>
+            <td>@Html.DisplayNameFor(model => model.Blades.First().Weight)</td>
+            <td>Actions</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var blade in Model.Blades)
+        {
+            <tr>
+                <td style="width:25%">@blade.Name</td>
+                <td>@blade.Price</td>
+                <td>@blade.Weight</td>
+                <td style="width:25%">
+                    @Html.ActionLink("Edit", "Edit", new { id = blade.BladeID }) |
+                    @Html.ActionLink("Details", "Details", new { id = blade.BladeID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = blade.BladeID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<legend>Handles</legend>
+<p>
+    @Html.ActionLink("Add Handle", "CreateHandle", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-hover table-bordered table-striped" style="text-align:center">
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Handles.First().Name)</td>
+            <td>@Html.DisplayNameFor(model => model.Handles.First().Price)</td>
+            <td>@Html.DisplayNameFor(model => model.Handles.First().Weight)</td>
+            <td>Actions</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var handle in Model.Handles)
+        {
+            <tr>
+                <td style="width:25%">@handle.Name</td>
+                <td>@handle.Price</td>
+                <td>@handle.Weight</td>
+                <td style="width:25%">
+                    @Html.ActionLink("Edit", "Edit", new { id = handle.HandleID }) |
+                    @Html.ActionLink("Details", "Details", new { id = handle.HandleID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = handle.HandleID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<legend>Reel Seats</legend>
+<p>
+    @Html.ActionLink("Add Reel Seat", "CreateReelSeat", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-hover table-bordered table-striped" style="text-align:center">
+    <thead>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.ReelSeats.First().Name)</td>
+            <td>@Html.DisplayNameFor(model => model.ReelSeats.First().Price)</td>
+            <td>@Html.DisplayNameFor(model => model.ReelSeats.First().Weight)</td>
+            <td>Actions</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reelseat in Model.ReelSeats)
+        {
+            <tr>
+                <td style="width:25%">@reelseat.Name</td>
+                <td>@reelseat.Price</td>
+                <td>@reelseat.Weight</td>
+                <td style="width:25%">
+                    @Html.ActionLink("Edit", "Edit", new { id = reelseat.ReelSeatID }) |
+                    @Html.ActionLink("Details", "Details", new { id = reelseat.ReelSeatID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = reelseat.ReelSeatID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
