@@ -159,6 +159,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccordionDesignController.cs" />
+    <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\DevController.cs" />
     <Compile Include="Controllers\LucasController.cs" />
     <Compile Include="Migrations\201711160918035_InitialMigration.cs" />
@@ -258,6 +259,11 @@
     <Content Include="Views\Dev\CreateReelSeat.cshtml" />
     <Content Include="Views\Dev\DetailsHandle.cshtml" />
     <Content Include="Views\Dev\DetailsReelSeat.cshtml" />
+    <Content Include="Views\Demo\Create.cshtml" />
+    <Content Include="Views\Demo\Delete.cshtml" />
+    <Content Include="Views\Demo\Details.cshtml" />
+    <Content Include="Views\Demo\Edit.cshtml" />
+    <Content Include="Views\Demo\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
