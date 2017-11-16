@@ -24,6 +24,39 @@ namespace CaseRod.Controllers
             return View(Model);
         }
 
+        #region Delete
+
+        public ActionResult DeleteBlade(int? id)
+        {
+            if (id == null)
+            {
+                return Index();
+            }
+
+            var Blade = _database.Blades.Find(id);
+
+            if (Blade == null)
+            {
+                return Index();
+            }
+
+            return View(Blade);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteBladeConfirmed(int id)
+        {
+            Blade blade = _database.Blades.Find(id);
+
+            _database.Blades.Remove(blade);
+            _database.SaveChanges();
+            
+            return RedirectToAction("Index");
+        }
+
+        #endregion  
+
         #region Details
         public ActionResult DetailsBlade(int? id)
         {
