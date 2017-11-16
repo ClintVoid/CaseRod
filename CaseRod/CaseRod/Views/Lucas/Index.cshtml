@@ -5,122 +5,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 @*Start of collapse*@
-
-                <div class="panel-group" id="accordion">
-    @*Start Blades Collapse*@        
-                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                                    Blades
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapse1" class="panel-collapse collapse in">
-                            <div class="panel-body">                            
-
-                                @foreach (var blade in Model.Blades)
-                                {  
-                                        <div class="list-group col-lg-2 col-md-2 col-sm-2" >                                           
-                                            <img src="~/Content/Images/Blades/@blade.Image" style="width:140px;height:140px;"/><br />
-                                            @blade.Name<br />
-                                            @blade.Weight gr
-                                            <p style="color:red; font-weight:bold;">@blade.Price SEK</p>
-                                        </div>     
-                                }
-
-
-                            </div>
-                        </div>
-                    </div>
-    @*End Blades Collapse*@
-
-    @*Start Handles Collapse*@
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                                    Handles
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapse2" class="panel-collapse collapse">
-                            <div class="panel-body">
-
-
-
-
-
-                                @foreach (var handle in Model.Handles)
-                                {
-                                    <div class="list-group col-lg-2 col-md-2 col-sm-2">
-                                        <img src="~/Content/Images/Handles/@handle.Image" style="width:150px;height:150px"  /><br />
-                                        @handle.Name<br />
-                                        @handle.Weight gr
-                                        <p style="color:red; font-weight:bold;">@handle.Price SEK</p>
-                                    </div>
-                                }
-
-
-
-                            </div>
-                        </div>
-                    </div>
-    @*End Handles Collapse*@
-
-    @*Start ReelSeats Collapse*@
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                                    Reel Seats
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapse3" class="panel-collapse collapse">
-                            <div class="panel-body">
-                           
-
-
-                                @foreach (var reelseat in Model.ReelSeats)
-                                {
-                                    <div class="list-group col-lg-2 col-md-2 col-sm-2">
-                                        <img src="~/Content/Images/ReelSeats/@reelseat.Image" style="width:150px;height:150px;" /><br />
-                                        @reelseat.Name<br />
-                                        @reelseat.Weight gr
-                                        <p style="color:red; font-weight:bold;">@reelseat.Price SEK</p>
-                                    </div>
-                                }
-
-
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    @*End ReelSeats Collapse*@
-                 
+    <div class="panel-group" id="accordion">        
+        @Html.Partial("_Blades")
+        @Html.Partial("_Handles")
+        @Html.Partial("_ReelSeats")
+    </div>                
 @*End of collapse*@
 
 @*Summary start*@
-   
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                                Summary
-                        </h4>
-                    </div>
-                    <div class="panel-body">
-                        <p>Summary of selected products</p>
-
-                    </div>
-                    
-                </div>
-
+    @Html.Partial("_Summary")
 @*Summary ends*@
 
 

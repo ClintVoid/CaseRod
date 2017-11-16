@@ -186,8 +186,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Images\Blades\Klinga1.png" />
     <Content Include="Content\Images\Blades\Klinga2.png" />
+    <Content Include="Content\Images\Blades\Klinga1.png" />
     <Content Include="Content\Images\Blades\Klinga3.png" />
     <Content Include="Content\Images\Extras\Fodral1.png" />
     <Content Include="Content\Images\Extras\Fodral2.png" />
@@ -266,6 +266,10 @@
     <Content Include="Views\Demo\Edit.cshtml" />
     <Content Include="Views\Demo\Index.cshtml" />
     <Content Include="Views\Kristoffer\Index.cshtml" />
+    <Content Include="Views\Lucas\_Blades.cshtml" />
+    <Content Include="Views\Lucas\_Handles.cshtml" />
+    <Content Include="Views\Lucas\_ReelSeats.cshtml" />
+    <Content Include="Views\Lucas\_Summary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
