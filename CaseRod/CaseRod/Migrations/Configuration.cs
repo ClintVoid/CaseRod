@@ -39,7 +39,7 @@ namespace CaseRod.Migrations
             context.Handles.AddOrUpdate(
                 new Handle { Name = "Handle1", Price = 450, Weight = 67, Image = "Korkhandtag1.png" },
                 new Handle { Name = "Handle2", Price = 550, Weight = 73, Image = "Korkhandtag2.png" },
-                new Handle { Name = "Handle3", Price = 700, Weight = 70, Image = "HandlesKorkhandtag3.png" }
+                new Handle { Name = "Handle3", Price = 700, Weight = 70, Image = "Korkhandtag3.png" }
                 );
 
             context.ReelSeats.AddOrUpdate(

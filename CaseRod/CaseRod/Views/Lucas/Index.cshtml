@@ -6,32 +6,11 @@
 }
 
 
-<h2>Customize the Lucas way</h2>
-
-@*<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Customize</button>
-
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Customize Rod</h4>
-            </div>
-            <div class="modal-body">*@
-
-
-
-
-
-
-
+@*Start of collapse*@
 
                 <div class="panel-group" id="accordion">
-                    <div class="panel panel-default">
+    @*Start Blades Collapse*@        
+                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
@@ -40,29 +19,25 @@
                             </h4>
                         </div>
                         <div id="collapse1" class="panel-collapse collapse in">
-                            <div class="panel-body">
-                              
-
+                            <div class="panel-body">                            
 
                                 @foreach (var blade in Model.Blades)
-                                { 
-                                    
-                                        <div class="list-group-item">
-                                            @*<img src="~/Content/Images/Blades/Klinga1.png" /><br />*@
-                                            <img src="~/Content/Images/Blades/@blade.Image"/><br />
+                                {  
+                                        <div class="list-group col-lg-2 col-md-2 col-sm-2" >                                           
+                                            <img src="~/Content/Images/Blades/@blade.Image" style="width:140px;height:140px;"/><br />
                                             @blade.Name<br />
-                                            @blade.Weight<br />
-                                            @blade.Price<br />
-                                        </div>
-                                    
+                                            @blade.Weight gr
+                                            <p style="color:red; font-weight:bold;">@blade.Price SEK</p>
+                                        </div>     
                                 }
-
-
 
 
                             </div>
                         </div>
                     </div>
+    @*End Blades Collapse*@
+
+    @*Start Handles Collapse*@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
@@ -80,24 +55,23 @@
 
                                 @foreach (var handle in Model.Handles)
                                 {
-
-                                    <div class="list-group-item">
-                                        <img src="~/Content/Images/Handles/@handle.Image" /><br />
+                                    <div class="list-group col-lg-2 col-md-2 col-sm-2">
+                                        <img src="~/Content/Images/Handles/@handle.Image" style="width:150px;height:150px"  /><br />
                                         @handle.Name<br />
-                                        @handle.Weight<br />
-                                        @handle.Price<br />
+                                        @handle.Weight gr
+                                        <p style="color:red; font-weight:bold;">@handle.Price SEK</p>
                                     </div>
-
                                 }
-
-
-
 
 
 
                             </div>
                         </div>
                     </div>
+    @*End Handles Collapse*@
+
+    @*Start ReelSeats Collapse*@
+
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h4 class="panel-title">
@@ -113,14 +87,12 @@
 
                                 @foreach (var reelseat in Model.ReelSeats)
                                 {
-
-                                    <div class="list-group-item">
-                                        <img src="~/Content/Images/ReelSeats/@reelseat.Image" /><br />
+                                    <div class="list-group col-lg-2 col-md-2 col-sm-2">
+                                        <img src="~/Content/Images/ReelSeats/@reelseat.Image" style="width:150px;height:150px;" /><br />
                                         @reelseat.Name<br />
-                                        @reelseat.Weight<br />
-                                        @reelseat.Price<br />
+                                        @reelseat.Weight gr
+                                        <p style="color:red; font-weight:bold;">@reelseat.Price SEK</p>
                                     </div>
-
                                 }
 
 
@@ -130,7 +102,12 @@
                         </div>
                     </div>
                 </div>
-                    
+    @*End ReelSeats Collapse*@
+                 
+@*End of collapse*@
+
+@*Summary start*@
+   
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
@@ -144,18 +121,6 @@
                     
                 </div>
 
+@*Summary ends*@
 
-
-
-
-              
-            @*</div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Select</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-
-    </div>
-</div>*@
 
