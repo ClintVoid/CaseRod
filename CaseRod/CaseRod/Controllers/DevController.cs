@@ -41,5 +41,23 @@ namespace CaseRod.Controllers
 
             return View(blade);
         }
+
+        public ActionResult CreateHandle()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateHandle([Bind(Include = "BladeID,Name,PartNumber,Image,Weight,Price")] Handle handle)
+        {
+            if (ModelState.IsValid)
+            {
+                _database.Handles.Add(handle);
+                _database.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(handle);
+        }
     }
 }
