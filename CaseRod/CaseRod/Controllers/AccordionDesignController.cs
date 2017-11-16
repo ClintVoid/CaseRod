@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace CaseRod.Controllers
 {
-    public class BuildRodController : Controller
+    public class AccordionDesignController : Controller
     {
         // GET: BuildRod
-        public ActionResult BuildRod()
+        public ActionResult Accordion()
         {
             return View();
         }

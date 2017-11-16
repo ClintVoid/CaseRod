@@ -158,7 +158,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\BuildRodController.cs" />
+    <Compile Include="Controllers\AccordionDesignController.cs" />
     <Compile Include="Controllers\DevController.cs" />
     <Compile Include="Migrations\201711160918035_InitialMigration.cs" />
     <Compile Include="Migrations\201711160918035_InitialMigration.Designer.cs">
@@ -232,7 +232,7 @@
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
-    <Content Include="Views\BuildRod\BuildRod.cshtml" />
+    <Content Include="Views\AccordionDesign\Accordion.cshtml" />
     <Content Include="Views\Dev\Index.cshtml" />
     <Content Include="Views\Dev\CreateBlade.cshtml" />
     <Content Include="Views\Dev\CreateHandle.cshtml" />
