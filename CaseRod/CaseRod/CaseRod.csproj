@@ -235,6 +235,10 @@
     <Content Include="Views\Dev\Index.cshtml" />
     <Content Include="Views\Dev\CreateBlade.cshtml" />
     <Content Include="Views\Dev\CreateHandle.cshtml" />
+    <Content Include="Views\Dev\DetailsBlade.cshtml" />
+    <Content Include="Views\Dev\CreateReelSeat.cshtml" />
+    <Content Include="Views\Dev\DetailsHandle.cshtml" />
+    <Content Include="Views\Dev\DetailsReelSeat.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

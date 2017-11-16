@@ -29,7 +29,7 @@
                 <td>@blade.Weight</td>
                 <td style="width:25%">
                     @Html.ActionLink("Edit", "Edit", new { id = blade.BladeID }) |
-                    @Html.ActionLink("Details", "Details", new { id = blade.BladeID }) |
+                    @Html.ActionLink("Details", "DetailsBlade", new { id = blade.BladeID }) |
                     @Html.ActionLink("Delete", "Delete", new { id = blade.BladeID })
                 </td>
             </tr>
@@ -58,7 +58,7 @@
                 <td>@handle.Weight</td>
                 <td style="width:25%">
                     @Html.ActionLink("Edit", "Edit", new { id = handle.HandleID }) |
-                    @Html.ActionLink("Details", "Details", new { id = handle.HandleID }) |
+                    @Html.ActionLink("Details", "DetailsHandle", new { id = handle.HandleID }) |
                     @Html.ActionLink("Delete", "Delete", new { id = handle.HandleID })
                 </td>
             </tr>
@@ -87,7 +87,7 @@
                 <td>@reelseat.Weight</td>
                 <td style="width:25%">
                     @Html.ActionLink("Edit", "Edit", new { id = reelseat.ReelSeatID }) |
-                    @Html.ActionLink("Details", "Details", new { id = reelseat.ReelSeatID }) |
+                    @Html.ActionLink("Details", "DetailsReelSeat", new { id = reelseat.ReelSeatID }) |
                     @Html.ActionLink("Delete", "Delete", new { id = reelseat.ReelSeatID })
                 </td>
             </tr>

@@ -24,6 +24,61 @@ namespace CaseRod.Controllers
             return View(Model);
         }
 
+        #region Details
+        public ActionResult DetailsBlade(int? id)
+        {
+            if (id == null)
+            {
+                return Index();
+            }
+
+            var Blade = _database.Blades.Find(id);
+            
+            if (Blade == null)
+            { 
+                return Index(); 
+            }
+
+            return View(Blade);
+        }
+
+        public ActionResult DetailsHandle(int? id)
+        {
+            if (id == null)
+            {
+                return Index();
+            }
+
+            var Handle = _database.Handles.Find(id);
+
+            if (Handle == null)
+            {
+                return Index();
+            }
+
+            return View(Handle);
+        }
+
+        public ActionResult DetailsReelSeat(int? id)
+        {
+            if (id == null)
+            {
+                return Index();
+            }
+
+            var ReelSeat = _database.ReelSeats.Find(id);
+
+            if (ReelSeat == null)
+            {
+                return Index();
+            }
+
+            return View(ReelSeat);
+        }
+
+        #endregion
+
+        #region Create
         public ActionResult CreateBlade()
         {
             return View();
@@ -48,7 +103,7 @@ namespace CaseRod.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateHandle([Bind(Include = "BladeID,Name,PartNumber,Image,Weight,Price")] Handle handle)
+        public ActionResult CreateHandle([Bind(Include="BladeID,Name,PartNumber,Image,Weight,Price")] Handle handle)
         {
             if (ModelState.IsValid)
             {
@@ -59,5 +114,24 @@ namespace CaseRod.Controllers
 
             return View(handle);
         }
+
+        public ActionResult CreateReelSeat()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateReelSeat([Bind(Include = "BladeID,Name,PartNumber,Image,Weight,Price")] ReelSeat reelSeat)
+        {
+            if (ModelState.IsValid)
+            {
+                _database.ReelSeats.Add(reelSeat);
+                _database.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(reelSeat);
+        }
+        #endregion
     }
 }
