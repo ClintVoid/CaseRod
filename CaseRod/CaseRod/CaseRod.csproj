@@ -158,6 +158,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\DevController.cs" />
     <Compile Include="Migrations\201711160918035_InitialMigration.cs" />
     <Compile Include="Migrations\201711160918035_InitialMigration.Designer.cs">
       <DependentUpon>201711160918035_InitialMigration.cs</DependentUpon>
@@ -176,6 +177,7 @@
     <Compile Include="Models\Entities\ReelSeat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\DevViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -228,6 +230,8 @@
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\BuildRod\BuildRod.cshtml" />
+    <Content Include="Views\Dev\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
