@@ -159,6 +159,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\DevController.cs" />
+    <Compile Include="Controllers\LucasController.cs" />
     <Compile Include="Migrations\201711160918035_InitialMigration.cs" />
     <Compile Include="Migrations\201711160918035_InitialMigration.Designer.cs">
       <DependentUpon>201711160918035_InitialMigration.cs</DependentUpon>
@@ -182,6 +183,22 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Blades\Klinga1.png" />
+    <Content Include="Content\Images\Blades\Klinga2.png" />
+    <Content Include="Content\Images\Blades\Klinga3.png" />
+    <Content Include="Content\Images\Extras\Fodral1.png" />
+    <Content Include="Content\Images\Extras\Fodral2.png" />
+    <Content Include="Content\Images\Extras\Fodral3.png" />
+    <Content Include="Content\Images\Extras\Krokhallare.png" />
+    <Content Include="Content\Images\Extras\Rodtube1.png" />
+    <Content Include="Content\Images\Extras\Rodtube2.png" />
+    <Content Include="Content\Images\Extras\Rodtube3.png" />
+    <Content Include="Content\Images\Handles\Korkhandtag1.png" />
+    <Content Include="Content\Images\Handles\Korkhandtag2.png" />
+    <Content Include="Content\Images\Handles\Korkhandtag3.png" />
+    <Content Include="Content\Images\ReelSeats\Rullfaste1.png" />
+    <Content Include="Content\Images\ReelSeats\Rullfaste2.png" />
+    <Content Include="Content\Images\ReelSeats\Rullfaste3.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -233,6 +250,7 @@
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\BuildRod\BuildRod.cshtml" />
     <Content Include="Views\Dev\Index.cshtml" />
+    <Content Include="Views\Lucas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

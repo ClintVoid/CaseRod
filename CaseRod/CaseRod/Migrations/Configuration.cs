@@ -31,21 +31,21 @@ namespace CaseRod.Migrations
             //context.Database.Delete();
 
             context.Blades.AddOrUpdate(
-                new Blade { Name = "Blade1", Price = 1500, Weight = 670, Image = "~/Content/Blades/Klinga1.png" },
+                new Blade { Name = "Blade1", Price = 1500, Weight = 670, Image = "~/Content/Images/Blades/Klinga1.png" },
                 new Blade { Name = "Blade2", Price = 1350, Weight = 700, Image = "~/Content/Blades/Klinga2.png" },
                 new Blade { Name = "Blade3", Price = 1600, Weight = 600, Image = "~/Content/Blades/Klinga3.png" }
                 );
 
             context.Handles.AddOrUpdate(
-                new Handle { Name = "Handle1", Price = 450, Weight = 67, Image = "~/Content/Handles/Korkhandtag1.png" },
-                new Handle { Name = "Handle2", Price = 550, Weight = 73, Image = "~/Content/Handles/Korkhandtag2.png" },
-                new Handle { Name = "Handle3", Price = 700, Weight = 70, Image = "~/Content/HandlesKorkhandtag3.png" }
+                new Handle { Name = "Handle1", Price = 450, Weight = 67, Image = "~/Content/Images/Handles/Korkhandtag1.png" },
+                new Handle { Name = "Handle2", Price = 550, Weight = 73, Image = "~/Content/Images/Handles/Korkhandtag2.png" },
+                new Handle { Name = "Handle3", Price = 700, Weight = 70, Image = "~/ContentImages//HandlesKorkhandtag3.png" }
                 );
 
             context.ReelSeats.AddOrUpdate(
-                new ReelSeat { Name = "ReelSeat1", Price = 1100, Weight = 170, Image = "~/Content/ReelSeats/Rullfaste1.png" },
-                new ReelSeat { Name = "ReelSeat2", Price = 900, Weight = 150, Image = "~/Content/ReelSeats/Rullfaste2.png" },
-                new ReelSeat { Name = "ReelSeat3", Price = 700, Weight = 160, Image = "~/Content/ReelSeats/Rullfaste.png" }
+                new ReelSeat { Name = "ReelSeat1", Price = 1100, Weight = 170, Image = "~/Content/Images/ReelSeats/Rullfaste1.png" },
+                new ReelSeat { Name = "ReelSeat2", Price = 900, Weight = 150, Image = "~/Content/Images/ReelSeats/Rullfaste2.png" },
+                new ReelSeat { Name = "ReelSeat3", Price = 700, Weight = 160, Image = "~/Content/Images/ReelSeats/Rullfaste3.png" }
                 );
 
 

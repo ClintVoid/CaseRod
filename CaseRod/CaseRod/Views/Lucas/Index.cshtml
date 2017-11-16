@@ -1,0 +1,161 @@
+﻿@using CaseRod.Models;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Customize the Lucas way</h2>
+
+@*<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Customize</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Customize Rod</h4>
+            </div>
+            <div class="modal-body">*@
+
+
+
+
+
+
+
+
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                    Blades
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                              
+
+
+                                @foreach (var blade in Model.Blades)
+                                { 
+                                    
+                                        <div class="list-group-item">
+                                            @*<img src="~/Content/Images/Blades/Klinga1.png" /><br />*@
+                                            <img src="~/Content/Images/Blades/@blade.Image"/><br />
+                                            @blade.Name<br />
+                                            @blade.Weight<br />
+                                            @blade.Price<br />
+                                        </div>
+                                    
+                                }
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                    Handles
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse2" class="panel-collapse collapse">
+                            <div class="panel-body">
+
+
+
+
+
+                                @foreach (var handle in Model.Handles)
+                                {
+
+                                    <div class="list-group-item">
+                                        <img src="~/Content/Images/Handles/@handle.Image" /><br />
+                                        @handle.Name<br />
+                                        @handle.Weight<br />
+                                        @handle.Price<br />
+                                    </div>
+
+                                }
+
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                    Reel Seats
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse3" class="panel-collapse collapse">
+                            <div class="panel-body">
+                           
+
+
+                                @foreach (var reelseat in Model.ReelSeats)
+                                {
+
+                                    <div class="list-group-item">
+                                        <img src="~/Content/Images/ReelSeats/@reelseat.Image" /><br />
+                                        @reelseat.Name<br />
+                                        @reelseat.Weight<br />
+                                        @reelseat.Price<br />
+                                    </div>
+
+                                }
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                                Summary
+                        </h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>Summary of selected products</p>
+
+                    </div>
+                    
+                </div>
+
+
+
+
+
+              
+            @*</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Select</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>*@
+
