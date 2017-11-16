@@ -7,23 +7,15 @@
     </div>
     <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
-
-
-
-
-
             @foreach (var handle in Model.Handles)
             {
                 <div class="list-group col-lg-2 col-md-2 col-sm-3">
-                    <img src="~/Content/Images/Handles/@handle.Image" style="width:40%;height:40%;" /><br />
+                    <img src="~/Content/Images/Handles/@handle.Image" style="width:120px;height:120px;" /><br />
                     @handle.Name<br />
                     @handle.Weight gr
                     <p style="color:red; font-weight:bold;">@handle.Price SEK</p>
                 </div>
             }
-
-
-
         </div>
     </div>
 </div>

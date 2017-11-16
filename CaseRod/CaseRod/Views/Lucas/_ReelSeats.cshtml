@@ -9,22 +9,15 @@
     </div>
     <div id="collapse3" class="panel-collapse collapse">
         <div class="panel-body">
-
-
-
             @foreach (var reelseat in Model.ReelSeats)
             {
                 <div class="list-group col-lg-2 col-md-2 col-sm-3">
-                    <img src="~/Content/Images/ReelSeats/@reelseat.Image" style="width:100px;height:100px;" /><br />
+                    <img src="~/Content/Images/ReelSeats/@reelseat.Image" style="width:120px;height:120px;" /><br />
                     @reelseat.Name<br />
                     @reelseat.Weight gr
                     <p style="color:red; font-weight:bold;">@reelseat.Price SEK</p>
                 </div>
             }
-
-
-
-
         </div>
     </div>
 </div>

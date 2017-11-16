@@ -7,18 +7,15 @@
     </div>
     <div id="collapse1" class="panel-collapse collapse in">
         <div class="panel-body">
-
             @foreach (var blade in Model.Blades)
             {
                 <div class="list-group col-lg-2 col-md-2 col-sm-3">
-                    <img src="~/Content/Images/Blades/@blade.Image" style="width:100px;height:100px;" /><br />
+                    <img src="~/Content/Images/Blades/@blade.Image" style="width:120px;height:120px;" /><br />
                     @blade.Name<br />
                     @blade.Weight gr
                     <p style="color:red; font-weight:bold;">@blade.Price SEK</p>
                 </div>
             }
-
-
         </div>
     </div>
 </div>
