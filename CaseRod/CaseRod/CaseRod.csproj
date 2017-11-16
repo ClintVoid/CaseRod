@@ -230,6 +230,7 @@
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\BuildRod\BuildRod.cshtml" />
     <Content Include="Views\Dev\Index.cshtml" />
   </ItemGroup>
