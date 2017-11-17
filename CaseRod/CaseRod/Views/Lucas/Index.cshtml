@@ -18,7 +18,7 @@
                 <div class="panel-body">
                     @foreach (var blade in Model.Blades)
                     {
-                        <div class="list-group col-lg-2 col-md-2 col-sm-3">
+                        <div class="list-group col-lg-2 col-md-2 col-sm-3" id="@("BladeItem" + blade.BladeID)">
                             <img src="~/Content/Images/Blades/@blade.Image" style="width:120px;height:120px;" /><br />
                             @blade.Name<br />
                             @blade.Weight gr
@@ -48,7 +48,7 @@
             <div class="panel-body">
                 @foreach (var handle in Model.Handles)
                 {
-                    <div class="list-group col-lg-2 col-md-2 col-sm-3">
+                    <div class="list-group col-lg-2 col-md-2 col-sm-3" id="@("HandleItem" + handle.HandleID)">
                         <img src="~/Content/Images/Handles/@handle.Image" style="width:120px;height:120px;" /><br />
                         @handle.Name<br />
                         @handle.Weight gr
@@ -80,7 +80,7 @@
             <div class="panel-body">
                 @foreach (var reelseat in Model.ReelSeats)
                 {
-                    <div class="list-group col-lg-2 col-md-2 col-sm-3">
+                    <div class="list-group col-lg-2 col-md-2 col-sm-3" id="@("ReelSeatItem" + reelseat.ReelSeatID)">
                         <img src="~/Content/Images/ReelSeats/@reelseat.Image" style="width:120px;height:120px;" /><br />
                         @reelseat.Name<br />
                         @reelseat.Weight gr
@@ -110,4 +110,12 @@
 
 @*Summary ends*@
 
-
+<script>
+    //$("").click(function () {
+    //    $('#foo').css({
+    //        'background-color': 'red',
+    //        'color': 'white',
+    //        'font-size': '44px'
+    //    });
+    //});
+</script>
