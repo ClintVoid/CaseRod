@@ -1,0 +1,24 @@
+﻿<button class="accordion" onclick="accButtons()">1</button>
+<div class="panel">
+    <div class="window">
+
+        @foreach (var blade in Model.Blades)
+        {
+
+            <button onclick="productButton()">
+                <img src="~/Content/Images/Blades/@blade.Image" height="100" width="100" /><br />
+                @blade.Name<br />
+                @blade.Weight<br />
+                <p style="color:red; font-size: 15px; ">@blade.Price SEK</p>
+            </button>
+
+        }
+
+    </div>
+    <div class="infotext">
+        <p>dvdvdzvdxzvzdvd</p>
+    </div>
+    <div class="addbutton">
+        <button>add</button>
+    </div>
+</div>

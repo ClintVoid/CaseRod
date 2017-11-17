@@ -1,0 +1,23 @@
+﻿<button class="accordion">3</button>
+<div class="panel">
+    <div class="window">
+
+        @foreach (var handle in Model.Handles)
+        {
+
+            <button class="product" id="handleButton">
+                <img src="~/Content/Images/Blades/@handle.Image" height="100" width="100" /><br />
+                @handle.Name<br />
+                @handle.Weight<br />
+                <p style="color:red; font-size: 15px; ">@handle.Price SEK</p>
+            </button>
+
+        }
+    </div>
+    <div class="infotext">
+        <p>dvdvdzvdxzvzdvd</p>
+    </div>
+    <div class="addbutton">
+        <button>add</button>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+﻿<button class="accordion"> 2 </button>
+<div class="panel">
+    <div class="window">
+        @foreach (var reelseat in Model.ReelSeats)
+        {
+
+            <button class="product" id="ReelButton">
+                <img src="~/Content/Images/ReelSeats/@reelseat.Image" height="100" width="100" /><br />
+                @reelseat.Name<br />
+                @reelseat.Weight<br />
+                <p style="color:red; font-size: 15px; ">@reelseat.Price SEK</p>
+            </button>
+
+        }
+    </div>
+    <div class="infotext">
+        <p>dvdvdzvdxzvzdvd</p>
+    </div>
+    <div class="addbutton">
+        <button>add</button>
+    </div>
+</div>

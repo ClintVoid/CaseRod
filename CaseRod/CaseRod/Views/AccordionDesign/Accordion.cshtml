@@ -1,73 +1,29 @@
-﻿@{
+﻿@using CaseRod.Models;
+@{
     ViewBag.Title = "Home Page";
 }
 <head>
-    <!-- Everything in the style tag shall be put into a css-file -->
-    <style>
-        button.accordion {
-            background-color: #eee;
-            color: #555;
-            cursor: pointer;
-            width: 10%;
-            height: 590px;
-            border: none;
-            text-align: center;
-            outline: none;
-            font-size: 15px;
-            transition: 0.4s;
-            position: page;
-        }
+    
+    <title> CaseRod</title>
+    @Styles.Render("~/Content/AccordionDesign.css")
+    
+</head>
 
-            button.accordion.active, button.accordion:hover {
-                background-color: #ccc;
-            }
-
-        div.panel1 {
-            padding: 0 180px;
-            padding-bottom: 100px;
-            display: none;
-            background-color: white;
-        }
-    </style>
-    <!-- end of style tag           -->
+<body>
     <div class="jumbotron" align="center">
         <h1>Build</h1>
         <p class="lead">Here we build rods</p>
     </div>
-</head>
-<body>
+
+    <h2 align="center">Accordion</h2>
+
     <div align="right">
-        <h2 align="center">Accordion</h2>
-        <button class="accordion">1</button>
-        <div class="panel1">
-            <p>Lorem ipsum dolor sit amet, </p>
-        </div>
-        <button class="accordion">2</button>
-        <div class="panel1">
-            <p>Lorem ipsum dolor sit amet, </p>
-        </div>
-        <button class="accordion">3</button>
-        <div class="panel1">
-            <p>Lorem ipsum dolor sit amet, </p>
-        </div>
+        @Html.Partial("_Blade")
+        @Html.Partial("_Handles")
+        @Html.Partial("_ReelSeats")
     </div>
 
-    <!-- Everything in teh script tag should be put into a js-file-->
-    <script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
+    @Html.Partial("_Summary")
 
-    for (i = 0; i < acc.length; i++) {
-        acc[i].onclick = function(){
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }
-        }
-    }
-    </script>
-    <!--  END OF SCRIPT-TAG   -->
+    @Scripts.Render("~/Scripts/AccordionDesign.js")
 </body>
