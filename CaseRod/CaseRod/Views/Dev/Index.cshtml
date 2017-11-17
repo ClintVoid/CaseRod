@@ -5,6 +5,8 @@
 }
 @{
     var Blade = Model.Blades;
+    var Handle = Model.Handles;
+    var ReelSeat = Model.ReelSeats;
 }
 <h2>Development</h2>
 <legend>Blades</legend>
@@ -23,6 +25,7 @@
     <tbody>
         @foreach (var blade in Model.Blades)
         {
+            
             <tr>
                 <td style="width:25%">@blade.Name</td>
                 <td>@blade.Price</td>
@@ -30,12 +33,45 @@
                 <td style="width:25%">
                     @Html.ActionLink("Edit", "Edit", new { id = blade.BladeID }) |
                     @Html.ActionLink("Details", "DetailsBlade", new { id = blade.BladeID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = blade.BladeID })
+                    <button type="button" class="btn-link" id="@("#deleteBladeButton" + blade.BladeID)" data-toggle="modal" data-target="@("#deleteBladeModal" + blade.BladeID)">Delete</button>
+
+                    <div class="modal fade" id="@("deleteBladeModal" + blade.BladeID)" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Delete product</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Are you sure you want to delete product?</p>
+                                </div>
+                                <div class="modal-footer">
+
+                                    @using (Html.BeginForm(new { id = blade.BladeID, producttype = 1 }))
+                                    {
+                                        @Html.AntiForgeryToken()
+
+                                        <div class="form-actions no-color">
+                                            <input type="submit" value="Delete" class="btn btn-danger" />
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+
+
 <legend>Handles</legend>
 <p>
     @Html.ActionLink("Add Handle", "CreateHandle", null, new { @class = "btn btn-primary" })
@@ -59,7 +95,34 @@
                 <td style="width:25%">
                     @Html.ActionLink("Edit", "Edit", new { id = handle.HandleID }) |
                     @Html.ActionLink("Details", "DetailsHandle", new { id = handle.HandleID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = handle.HandleID })
+                    <button type="button" class="btn-link" id="@("#deleteHandleButton" + handle.HandleID)" data-toggle="modal" data-target="@("#deleteHandleModal" + handle.HandleID)">Delete</button>
+
+                    <div class="modal fade" id="@("deleteHandleModal" + handle.HandleID)" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Delete product</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Are you sure you want to delete product?</p>
+                                </div>
+                                <div class="modal-footer">
+
+                                    @using (Html.BeginForm(new { id = handle.HandleID, producttype = 2 }))
+                                    {
+                                        @Html.AntiForgeryToken()
+
+                                        <div class="form-actions no-color">
+                                            <input type="submit" value="Delete" class="btn btn-danger" />
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </td>
             </tr>
         }
@@ -88,7 +151,34 @@
                 <td style="width:25%">
                     @Html.ActionLink("Edit", "Edit", new { id = reelseat.ReelSeatID }) |
                     @Html.ActionLink("Details", "DetailsReelSeat", new { id = reelseat.ReelSeatID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = reelseat.ReelSeatID })
+                    <button type="button" class="btn-link" id="@("#deleteReelSeatButton" + reelseat.ReelSeatID)" data-toggle="modal" data-target="@("#deleteHandleModal" + reelseat.ReelSeatID)">Delete</button>
+
+                    <div class="modal fade" id="@("deleteHandleModal" + reelseat.ReelSeatID)" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Delete product</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Are you sure you want to delete product?</p>
+                                </div>
+                                <div class="modal-footer">
+
+                                    @using (Html.BeginForm(new { id = reelseat.ReelSeatID, producttype = 3 }))
+                                    {
+                                        @Html.AntiForgeryToken()
+
+                                        <div class="form-actions no-color">
+                                            <input type="submit" value="Delete" class="btn btn-danger" />
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </td>
             </tr>
         }
