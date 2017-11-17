@@ -26,34 +26,120 @@ namespace CaseRod.Controllers
 
         #region Delete
 
-        public ActionResult DeleteBlade(int? id)
-        {
-            if (id == null)
-            {
-                return Index();
-            }
+        //[HttpPost, ActionName("Index")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteBlade(int id)
+        //{
+        //    Blade blade = _database.Blades.Find(id);
 
-            var Blade = _database.Blades.Find(id);
+        //    _database.Blades.Remove(blade);
+        //    _database.SaveChanges();
+            
+        //    return RedirectToAction("Index");
+        //}
 
-            if (Blade == null)
-            {
-                return Index();
-            }
 
-            return View(Blade);
-        }
 
-        [HttpPost, ActionName("Delete")]
+
+
+        [HttpPost, ActionName("Index")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteBladeConfirmed(int id)
+        public ActionResult DeleteProduct(int id, int producttype)
         {
+            if(producttype == 1)
+            {
             Blade blade = _database.Blades.Find(id);
 
             _database.Blades.Remove(blade);
             _database.SaveChanges();
             
+            }
+            else if (producttype == 2) 
+            {
+                Handle handle = _database.Handles.Find(id);
+
+                _database.Handles.Remove(handle);
+                _database.SaveChanges();
+            }
+            else
+            {
+                ReelSeat reelseat = _database.ReelSeats.Find(id);
+
+                _database.ReelSeats.Remove(reelseat);
+                _database.SaveChanges();
+            }
+            
+                
+                
+                
+            
+
             return RedirectToAction("Index");
         }
+
+
+
+
+
+        //public ActionResult DeleteHandle(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return Index();
+        //    }
+
+        //    var Handle = _database.Handles.Find(id);
+
+        //    if (Handle == null)
+        //    {
+        //        return Index();
+        //    }
+
+        //    return View(Handle);
+        //}
+
+        //[HttpPost, ActionName("Index")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteHandle(int id)
+        //{
+        //    Handle handle = _database.Handles.Find(id);
+
+        //    _database.Handles.Remove(handle);
+        //    _database.SaveChanges();
+
+        //    return RedirectToAction("Index");
+        //}
+
+
+
+        ////public ActionResult DeleteReelSeat(int? id)
+        ////{
+        ////    if (id == null)
+        ////    {
+        ////        return Index();
+        ////    }
+
+        ////    var ReelSeat = _database.ReelSeats.Find(id);
+
+        ////    if (ReelSeat == null)
+        ////    {
+        ////        return Index();
+        ////    }
+
+        ////    return View(ReelSeat);
+        ////}
+
+        //[HttpPost, ActionName("Index")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteReelSeat(int id)
+        //{
+        //    ReelSeat reelseat = _database.ReelSeats.Find(id);
+
+        //    _database.ReelSeats.Remove(reelseat);
+        //    _database.SaveChanges();
+
+        //    return RedirectToAction("Index");
+        //}
 
         #endregion  
 
