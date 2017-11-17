@@ -7,14 +7,115 @@
 
 @*Start of collapse*@
     <div class="panel-group" id="accordion">        
-        @Html.Partial("_Blades")
-        @Html.Partial("_Handles")
-        @Html.Partial("_ReelSeats")
-    </div>                
+
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                <h4 class="panel-title">
+                    Blades
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+                <div class="panel-body">
+                    @foreach (var blade in Model.Blades)
+                    {
+                        <div class="list-group col-lg-2 col-md-2 col-sm-3" id="@("BladeItem" + blade.BladeID)">
+                            <img src="~/Content/Images/Blades/@blade.Image" style="width:120px;height:120px;" /><br />
+                            @blade.Name<br />
+                            @blade.Weight gr
+                            <p style="color:red; font-weight:bold;">@blade.Price SEK</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>   
+
+
+
+
+
+
+
+<div class="panel-group" id="accordion">
+
+    <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+            <h4 class="panel-title">
+                Handles
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                @foreach (var handle in Model.Handles)
+                {
+                    <div class="list-group col-lg-2 col-md-2 col-sm-3" id="@("HandleItem" + handle.HandleID)">
+                        <img src="~/Content/Images/Handles/@handle.Image" style="width:120px;height:120px;" /><br />
+                        @handle.Name<br />
+                        @handle.Weight gr
+                        <p style="color:red; font-weight:bold;">@handle.Price SEK</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div> 
+
+
+
+
+
+
+
+<div class="panel-group" id="accordion">
+
+    <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+            <h4 class="panel-title">
+
+                Reel Seats
+
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">
+                @foreach (var reelseat in Model.ReelSeats)
+                {
+                    <div class="list-group col-lg-2 col-md-2 col-sm-3" id="@("ReelSeatItem" + reelseat.ReelSeatID)">
+                        <img src="~/Content/Images/ReelSeats/@reelseat.Image" style="width:120px;height:120px;" /><br />
+                        @reelseat.Name<br />
+                        @reelseat.Weight gr
+                        <p style="color:red; font-weight:bold;">@reelseat.Price SEK</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+</div>              
 @*End of collapse*@
 
 @*Summary start*@
-    @Html.Partial("_Summary")
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            Summary
+        </h4>
+    </div>
+    <div class="panel-body">
+        <p>Summary of selected products</p>
+    </div>
+</div>
+
+
 @*Summary ends*@
 
-
+<script>
+    //$("").click(function () {
+    //    $('#foo').css({
+    //        'background-color': 'red',
+    //        'color': 'white',
+    //        'font-size': '44px'
+    //    });
+    //});
+</script>

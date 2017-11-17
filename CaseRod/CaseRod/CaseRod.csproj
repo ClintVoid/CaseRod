@@ -163,6 +163,7 @@
     <Compile Include="Controllers\DevController.cs" />
     <Compile Include="Controllers\KristofferController.cs" />
     <Compile Include="Controllers\LucasController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Migrations\201711160918035_InitialMigration.cs" />
     <Compile Include="Migrations\201711160918035_InitialMigration.Designer.cs">
       <DependentUpon>201711160918035_InitialMigration.cs</DependentUpon>
@@ -179,8 +180,10 @@
     <Compile Include="Models\Component.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Entities\ReelSeat.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\BuildViewModel.cs" />
     <Compile Include="ViewModels\DevViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -268,17 +271,10 @@
     <Content Include="Views\Demo\Edit.cshtml" />
     <Content Include="Views\Demo\Index.cshtml" />
     <Content Include="Views\Kristoffer\Index.cshtml" />
-    <Content Include="Views\Lucas\_Blades.cshtml" />
-    <Content Include="Views\Lucas\_Handles.cshtml" />
-    <Content Include="Views\Lucas\_ReelSeats.cshtml" />
-    <Content Include="Views\Lucas\_Summary.cshtml" />
-    <Content Include="Views\AccordionDesign\_Blade.cshtml" />
-    <Content Include="Views\AccordionDesign\_ReelSeats.cshtml" />
-    <Content Include="Views\AccordionDesign\_Handles.cshtml" />
-    <Content Include="Views\AccordionDesign\_Summary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
