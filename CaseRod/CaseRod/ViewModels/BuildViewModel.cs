@@ -11,10 +11,6 @@ namespace CaseRod.ViewModels
         public List<Blade> Blades { get; set; }
         public List<Handle> Handles { get; set; }
         public List<ReelSeat> ReelSeats { get; set; }
-        public Blade ChosenBlade { get; set; }
-        public Handle ChosenHandle { get; set; }
-        public ReelSeat ChosenReelSeat { get; set; }
-        public int Price { get; set; }
-        public int Weight { get; set; }
+        public Product Product { get; set; }
     }
 }

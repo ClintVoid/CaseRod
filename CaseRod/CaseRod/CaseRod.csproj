@@ -163,6 +163,7 @@
     <Compile Include="Controllers\DevController.cs" />
     <Compile Include="Controllers\KristofferController.cs" />
     <Compile Include="Controllers\LucasController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Migrations\201711160918035_InitialMigration.cs" />
     <Compile Include="Migrations\201711160918035_InitialMigration.Designer.cs">
       <DependentUpon>201711160918035_InitialMigration.cs</DependentUpon>
@@ -179,6 +180,7 @@
     <Compile Include="Models\Component.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Entities\ReelSeat.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\BuildViewModel.cs" />
@@ -274,6 +276,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
