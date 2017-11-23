@@ -271,10 +271,10 @@
     <Content Include="Views\Demo\Edit.cshtml" />
     <Content Include="Views\Demo\Index.cshtml" />
     <Content Include="Views\Kristoffer\Index.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
