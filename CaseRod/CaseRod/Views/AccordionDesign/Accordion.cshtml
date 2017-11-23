@@ -1,12 +1,11 @@
 ﻿@using CaseRod.Models;
 @{
     ViewBag.Title = "Home Page";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <head>
     
     <title> CaseRod</title>
-    @Styles.Render("~/Content/AccordionDesign.css")
+     @Styles.Render("~/Content/AccordionDesign.css")
     
 </head>
 <body>
@@ -18,4 +17,5 @@
     </section>
 
     @Html.Partial("_Summary")
+    @Scripts.Render("~/Scripts/AccordionDesign.js")
 </body>

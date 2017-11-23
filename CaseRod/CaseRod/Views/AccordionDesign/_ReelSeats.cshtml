@@ -1,15 +1,17 @@
-﻿<label for="2" class="bar"><h3>Reelseats</h3></label>
-<input id="2" name="show" type="radio" hidden="hidden">
+﻿<label for="c" class="bar">
+    <h3>Reelseats</h3>
+</label>
+<input id="c" name="show" type="radio" hidden="hidden">
 <div class="slider">
-<div class="products">
-    @foreach (var reelseat in Model.ReelSeats)
+    <div class="products">
+        @foreach (var reelseat in Model.ReelSeats)
         {
-        <button>
-            <img src="~/Content/Images/ReelSeats/@reelseat.Image" style="width:120px;height:120px;" /><br />
-            @reelseat.Name<br />
-            @reelseat.Weight gr
-            <p style="color:red; font-weight:bold;">@reelseat.Price SEK</p>
-        </button>
-    }
+            <button>
+                <img src="~/Content/Images/ReelSeats/@reelseat.Image" style="width:120px;height:120px;" /><br />
+                @reelseat.Name<br />
+                @reelseat.Weight gr
+                <p style="color:red; font-weight:bold;">@reelseat.Price SEK</p>
+            </button>
+        }
     </div>        
 </div>

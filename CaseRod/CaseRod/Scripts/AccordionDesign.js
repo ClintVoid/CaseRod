@@ -1,4 +1,4 @@
-﻿function accButtons() {
+﻿/*function accButtons() {
     var acc = document.getElementsByClassName("accordion");
     var i;
 
@@ -31,4 +31,13 @@ function productButton() {
 }
 function addItem() {
 
+}*/
+
+function prdctclick(x)
+{
+    var prdct = document.getElementsById(x);
+    if (prdct.style.backgroundColor == "white")
+        prdct.style.bacgroundColor = "#eee";
+    else
+        prdct.style.bacgroundColor = "white";
 }
