@@ -2,10 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Kalam', cursive;
     transition: all .3s ease-out;
 }
-
 
 section {
     margin: 50px auto;
@@ -15,6 +13,9 @@ section {
     align-items: center;
     top: calc(50% - 150px);
     left: calc(50% - 205px);
+}
+button{
+    background-color:white;
 }
 
 .bar {
@@ -39,20 +40,8 @@ section {
     align-items:inherit;
 }
 
-q {
-    display: inline-block;
-    color: #2980b9;
-    font-size: 18px;
-    width: 250px;
-    padding: 0 10px;
-}
-
 div:last-of-type {
     border-radius: 0 10px 10px 0;
-}
-
-img {
-    width: 110px;
 }
 
 span {
@@ -78,7 +67,7 @@ input:checked+div {
 }
 
 .products {
-    border: 1px solid #ccc;
-    height: 50%;
+    background-color:white;
+    height: 60%;
     overflow: scroll;
 }

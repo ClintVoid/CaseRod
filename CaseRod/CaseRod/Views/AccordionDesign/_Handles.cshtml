@@ -1,12 +1,14 @@
-﻿
-<label for="3" class="bar"><h3>Handles</h3></label>
-<input id="3" name="show" type="radio" hidden="hidden">
+﻿<label for="b" class="bar">
+    <h3>Handles</h3>
+</label>
+<input id="b" name="show" type="radio" hidden="hidden">
 <div class="slider">
     <div class="products">
         @foreach (var handle in Model.Handles)
         {
-            <button>
-                <img src="~/Content/Images/Handles/@handle.Image" style="width:120px;height:120px;" /><br />
+            var HandleID = 20 + @handle.HandleID;
+            <button class="button" id=@HandleID onclick="prdctclick(@HandleID)" style="background-color:white;">
+                <img src="~/Content/Images/Handles/@handle.Image" style="width:100px;height:100px;" /><br />
                 @handle.Name<br />
                 @handle.Weight gr
                 <p style="color:red; font-weight:bold;">@handle.Price SEK</p>
