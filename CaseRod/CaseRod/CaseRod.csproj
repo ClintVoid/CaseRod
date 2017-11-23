@@ -162,7 +162,6 @@
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\DevController.cs" />
     <Compile Include="Controllers\KristofferController.cs" />
-    <Compile Include="Controllers\LucasController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Migrations\201711160918035_InitialMigration.cs" />
     <Compile Include="Migrations\201711160918035_InitialMigration.Designer.cs">
@@ -274,7 +273,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Lucas\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
