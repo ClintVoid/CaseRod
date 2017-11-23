@@ -1,0 +1,20 @@
+﻿
+
+
+<label for="1" name="show" class="bar">
+    <h3>Blades</h3>
+</label>
+<input id="1" name="show" type="radio" hidden="hidden" checked>
+<div class="slider">
+    <div class="products">
+        @foreach (var blade in Model.Blades)
+        {
+            <button>
+                <img src="~/Content/Images/Blades/@blade.Image" style="width:120px;height:120px;" /><br/>
+                @blade.Name<br />
+                @blade.Weight <br />
+                <p style="color:red; font-weight:bold;">@blade.Price SEK</p>
+            </button>
+        }
+    </div>
+</div>

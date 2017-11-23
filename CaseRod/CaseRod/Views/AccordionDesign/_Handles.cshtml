@@ -1,23 +1,17 @@
-﻿<button class="accordion">3</button>
-<div class="panel">
-    <div class="window">
-
+﻿
+<label for="3" class="bar"><h3>Handles</h3></label>
+<input id="3" name="show" type="radio" hidden="hidden">
+<div class="slider">
+    <div class="products">
         @foreach (var handle in Model.Handles)
         {
-
-            <button class="product" id="handleButton">
-                <img src="~/Content/Images/Blades/@handle.Image" height="100" width="100" /><br />
+            <button>
+                <img src="~/Content/Images/Handles/@handle.Image" style="width:120px;height:120px;" /><br />
                 @handle.Name<br />
-                @handle.Weight<br />
-                <p style="color:red; font-size: 15px; ">@handle.Price SEK</p>
+                @handle.Weight gr
+                <p style="color:red; font-weight:bold;">@handle.Price SEK</p>
             </button>
-
         }
     </div>
-    <div class="infotext">
-        <p>dvdvdzvdxzvzdvd</p>
-    </div>
-    <div class="addbutton">
-        <button>add</button>
-    </div>
 </div>
+

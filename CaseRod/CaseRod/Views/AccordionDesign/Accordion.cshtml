@@ -1,6 +1,7 @@
 ﻿@using CaseRod.Models;
 @{
     ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <head>
     
@@ -8,22 +9,13 @@
     @Styles.Render("~/Content/AccordionDesign.css")
     
 </head>
-
 <body>
-    <div class="jumbotron" align="center">
-        <h1>Build</h1>
-        <p class="lead">Here we build rods</p>
-    </div>
-
-    <h2 align="center">Accordion</h2>
-
-    <div align="right">
-        @Html.Partial("_Blade")
+    <section>
+        @Html.Partial("_Blades")
+        @Html.Partial("_Reelseats")
         @Html.Partial("_Handles")
-        @Html.Partial("_ReelSeats")
-    </div>
+
+    </section>
 
     @Html.Partial("_Summary")
-
-    @Scripts.Render("~/Scripts/AccordionDesign.js")
 </body>

@@ -271,6 +271,10 @@
     <Content Include="Views\Demo\Edit.cshtml" />
     <Content Include="Views\Demo\Index.cshtml" />
     <Content Include="Views\Kristoffer\Index.cshtml" />
+    <Content Include="Views\AccordionDesign\_Blades.cshtml" />
+    <Content Include="Views\AccordionDesign\_Reelseats.cshtml" />
+    <Content Include="Views\AccordionDesign\_Handles.cshtml" />
+    <Content Include="Views\AccordionDesign\_Summary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
