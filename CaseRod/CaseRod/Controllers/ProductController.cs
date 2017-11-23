@@ -24,7 +24,11 @@ namespace CaseRod.Controllers
 
             if (Session["Product"] == null)
             {
-                Model.Product = new Product { Price = 0, Weight = 0, ChosenBlade = _database.Blades.Find(2) };
+                var Product = new Product { Price = 0, Weight = 0, ChosenBlade = _database.Blades.Find(1), ChosenHandle = _database.Handles.Find(1), ChosenReelSeat = _database.ReelSeats.Find(1)};
+
+                Session["Product"] = Product;
+
+                Model.Product = Session["Product"] as Product;
 
                 return View(Model);
             }
@@ -50,6 +54,17 @@ namespace CaseRod.Controllers
             var Product = Session["Product"] as Product;
 
             Product.ChosenHandle = _database.Handles.Find(id);
+
+            Session["Product"] = Product;
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult ChooseReelSeat(int? id)
+        {
+            var Product = Session["Product"] as Product;
+
+            Product.ChosenReelSeat = _database.ReelSeats.Find(id);
 
             Session["Product"] = Product;
 
