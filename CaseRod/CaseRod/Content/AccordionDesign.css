@@ -14,6 +14,9 @@ section {
     top: calc(50% - 150px);
     left: calc(50% - 205px);
 }
+button{
+    background-color:white;
+}
 
 .bar {
     background-color: #eee;
