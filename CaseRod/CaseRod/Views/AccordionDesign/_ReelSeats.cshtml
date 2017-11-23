@@ -6,8 +6,10 @@
     <div class="products">
         @foreach (var reelseat in Model.ReelSeats)
         {
-            <button>
-                <img src="~/Content/Images/ReelSeats/@reelseat.Image" style="width:120px;height:120px;" /><br />
+            var ReelID = 10 + @reelseat.ReelSeatID;
+            
+            <button class="button" id=@ReelID onclick="prdctclick(@ReelID)" style="background-color:white;">
+                <img src="~/Content/Images/ReelSeats/@reelseat.Image" style="width:100px;height:100px;" /><br />
                 @reelseat.Name<br />
                 @reelseat.Weight gr
                 <p style="color:red; font-weight:bold;">@reelseat.Price SEK</p>
