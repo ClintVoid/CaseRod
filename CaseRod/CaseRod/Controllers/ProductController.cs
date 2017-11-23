@@ -18,12 +18,13 @@ namespace CaseRod.Controllers
             {
                 Blades = _database.Blades.ToList(),
                 Handles = _database.Handles.ToList(),
-                ReelSeats = _database.ReelSeats.ToList()
+                ReelSeats = _database.ReelSeats.ToList(),
+
             };
 
             if (Session["Product"] == null)
             {
-                Model.Product = new Product { Price = 0, Weight = 0 };
+                Model.Product = new Product { Price = 0, Weight = 0, ChosenBlade = _database.Blades.Find(2) };
 
                 return View(Model);
             }
