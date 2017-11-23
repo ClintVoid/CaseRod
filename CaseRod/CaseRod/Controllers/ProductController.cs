@@ -43,5 +43,16 @@ namespace CaseRod.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public ActionResult ChooseHandle(int? id)
+        {
+            var Product = Session["Product"] as Product;
+
+            Product.ChosenHandle = _database.Handles.Find(id);
+
+            Session["Product"] = Product;
+
+            return RedirectToAction("Index");
+        }
     }
 }

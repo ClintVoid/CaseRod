@@ -1,23 +1,175 @@
-﻿
+﻿@model CaseRod.ViewModels.BuildViewModel
+
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+@*Start of collapse*@
+    <div class="panel-group" id="accordion">        
 
-<div class="card">
-    <h3 class="card-header">Card header</h3>
-    <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+        <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                <h4 class="panel-title">
+                    Blades
+                </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+                <div class="panel-body">
+                    @foreach (var blade in Model.Blades)
+                    {
+                        <div class="list-group col-lg-2 col-md-2 col-sm-3" id="@("BladeItem" + blade.BladeID)">
+                            <img src="~/Content/Images/Blades/@blade.Image" style="width:120px;height:120px;" /><br />
+                            @blade.Name<br />
+                            @blade.Weight gr
+                            <p style="color:red; font-weight:bold;">@blade.Price SEK</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>   
+
+
+
+
+
+
+
+<div class="panel-group" id="accordion">
+
+    <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+            <h4 class="panel-title">
+                Handles
+            </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                @foreach (var handle in Model.Handles)
+                {
+                    <div class="list-group col-lg-2 col-md-2 col-sm-3" id="@("HandleItem" + handle.HandleID)">
+                        <img src="~/Content/Images/Handles/@handle.Image" style="width:120px;height:120px;" /><br />
+                        @handle.Name<br />
+                        @handle.Weight gr
+                        <p style="color:red; font-weight:bold;">@handle.Price SEK</p>
+                    </div>
+                }
+            </div>
+        </div>
     </div>
-    <img style="height: 200px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">
-    <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
+</div> 
+
+
+
+
+
+
+
+<div class="panel-group" id="accordion">
+
+    <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+            <h4 class="panel-title">
+
+                Reel Seats
+
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">
+                @foreach (var reelseat in Model.ReelSeats)
+                {
+                    <div class="list-group col-lg-2 col-md-2 col-sm-3" id="@("ReelSeatItem" + reelseat.ReelSeatID)">
+                        <img src="~/Content/Images/ReelSeats/@reelseat.Image" style="width:120px;height:120px;" /><br />
+                        @reelseat.Name<br />
+                        @reelseat.Weight gr
+                        <p style="color:red; font-weight:bold;">@reelseat.Price SEK</p>
+                    </div>
+                }
+            </div>
+        </div>
     </div>
-    <div class="card-footer text-muted">
-        2 days ago
+
+</div>              
+@*End of collapse*@
+
+@*Summary start*@
+    
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            Summary
+        </h4>
+    </div>
+    <div class="panel-body">
+        <p>Summary of selected products</p>
+
+
+
+
+        <div class="card list-group col-lg-2 col-md-2 col-sm-3">
+            <h3 class="card-header">Card header</h3>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+            </div>
+            <img style="width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+
+        <div class="card list-group col-lg-2 col-md-2 col-sm-3">
+            <h3 class="card-header">Card header</h3>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+            </div>
+            <img style="width: 100%; display: block;" src="~/Content/Images/Blades/" alt="Card image">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+
+        <div class="card list-group col-lg-2 col-md-2 col-sm-3">
+            <h3 class="card-header">Card header</h3>
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+            </div>
+            <img style="width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
     </div>
 </div>
+
+
+@*Summary ends*@
+
+<script>
+    //$("").click(function () {
+    //    $('#foo').css({
+    //        'background-color': 'red',
+    //        'color': 'white',
+    //        'font-size': '44px'
+    //    });
+    //});
+</script>
