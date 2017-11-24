@@ -24,18 +24,14 @@ namespace CaseRod.Controllers
 
             if (Session["Product"] == null)
             {
-                var Product = new Product { Price = 0, Weight = 0, ChosenBlade = _database.Blades.Find(1), ChosenHandle = _database.Handles.Find(1), ChosenReelSeat = _database.ReelSeats.Find(1)};
+                var Product = new Product { Price = 0, Weight = 0 };
 
                 Session["Product"] = Product;
-
-                SummarizeProductInfo();
 
                 Model.Product = Session["Product"] as Product;
 
                 return View(Model);
             }
-
-            SummarizeProductInfo();
 
             Model.Product = Session["Product"] as Product;
 
@@ -85,10 +81,35 @@ namespace CaseRod.Controllers
         {
             var Product = Session["Product"] as Product;
 
-            Product.Price = Product.ChosenBlade.Price + Product.ChosenHandle.Price + Product.ChosenReelSeat.Price;
-            Product.Weight = Product.ChosenBlade.Weight + Product.ChosenHandle.Weight + Product.ChosenReelSeat.Weight;
+            Product.Price = 0;
+            Product.Weight = 0;
+
+            if (Product.ChosenBlade != null)
+            {
+                Product.Price += Product.ChosenBlade.Price;
+                Product.Weight += Product.ChosenBlade.Weight;
+            }
+
+            if (Product.ChosenHandle != null)
+            {
+                Product.Price += Product.ChosenHandle.Price;
+                Product.Weight += Product.ChosenHandle.Weight;
+            }
+
+            if (Product.ChosenReelSeat != null)
+            {
+                Product.Price += Product.ChosenReelSeat.Price;
+                Product.Weight += Product.ChosenReelSeat.Weight;
+            }
 
             Session["Product"] = Product;
+        }
+
+        public ActionResult Blade()
+        {
+            ViewBag.Session = Session.SessionID;
+
+            return View();
         }
     }
 }

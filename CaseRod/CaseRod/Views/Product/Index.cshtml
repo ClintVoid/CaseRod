@@ -6,32 +6,17 @@
 }
 
 @{
-    string BladeImage = Model.Product.ChosenBlade != null ? Model.Product.ChosenBlade.Image
-        : "Klinga1.png";
-        
-    int BladePrice = Model.Product.ChosenBlade != null ? Model.Product.ChosenBlade.Price
-        : 0;
+    string BladeImage = Model.Product.ChosenBlade != null ? Model.Product.ChosenBlade.Image : "default.png";
 
-    string BladeName = Model.Product.ChosenBlade != null ? Model.Product.ChosenBlade.Name
-        : "Blade not chosen.";
+    string BladeName = Model.Product.ChosenBlade != null ? Model.Product.ChosenBlade.Name : "Blade not chosen.";
 
-    string ReelSeatImage = Model.Product.ChosenReelSeat != null ? Model.Product.ChosenReelSeat.Image
-        : "Rullfaste1.png";
+    string ReelSeatImage = Model.Product.ChosenReelSeat != null ? Model.Product.ChosenReelSeat.Image : "default.png";
 
-    int ReelSeatPrice = Model.Product.ChosenReelSeat != null ? Model.Product.ChosenReelSeat.Price
-    : 0;
+    string ReelSeatName = Model.Product.ChosenReelSeat != null ? Model.Product.ChosenReelSeat.Name : "Reelseat not chosen.";
 
-    string ReelSeatName = Model.Product.ChosenReelSeat != null ? Model.Product.ChosenReelSeat.Name
-    : "Reelseat not chosen.";
+    string HandleImage = Model.Product.ChosenHandle != null ? Model.Product.ChosenHandle.Image : "default.png";
 
-    string HandleImage = Model.Product.ChosenHandle != null ? Model.Product.ChosenHandle.Image
-        : "Korkhandtag1.png";
-
-    int HandlePrice = Model.Product.ChosenHandle != null ? Model.Product.ChosenHandle.Price
-    : 0;
-
-    string HandleName = Model.Product.ChosenHandle != null ? Model.Product.ChosenHandle.Name
-    : "Handle not chosen.";
+    string HandleName = Model.Product.ChosenHandle != null ? Model.Product.ChosenHandle.Name : "Handle not chosen.";
 }
 
 <div class="panel">
@@ -71,17 +56,17 @@
                         <tr>
                             <td>@BladeName</td>
                             <td>@Html.DisplayFor(model => model.Product.ChosenBlade.Weight)</td>
-                            <td>@BladePrice</td>
+                            <td>@Html.DisplayFor(model => model.Product.ChosenBlade.Price)</td>
                         </tr>
                         <tr>
                             <td>@HandleName</td>
                             <td>@Html.DisplayFor(model => model.Product.ChosenHandle.Weight)</td>
-                            <td>@HandlePrice</td>
+                            <td>@Html.DisplayFor(model => model.Product.ChosenHandle.Price)</td>
                         </tr>
                         <tr>
                             <td>@ReelSeatName</td>
                             <td>@Html.DisplayFor(model => model.Product.ChosenReelSeat.Weight)</td>
-                            <td>@ReelSeatPrice</td>
+                            <td>@Html.DisplayFor(model => model.Product.ChosenReelSeat.Price)</td>
                         </tr>
                         <tr>
                             <td></td>
@@ -116,7 +101,9 @@
             <div class="panel-body" style="padding: 10px">
                 @foreach (var item in Model.Blades)
                 {
-                    string ClassHtmlBlade = item.BladeID == Model.Product.ChosenBlade.BladeID ? "btn btn-default disabled" : "btn btn-danger";
+                    string ClassHtml = Model.Product.ChosenBlade == null ? "btn btn-danger"
+                            : item.BladeID == Model.Product.ChosenBlade.BladeID ? "btn btn-default disabled"
+                            : "btn btn-danger";
                     
                     <div class="card list-group col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin:10px">
 
@@ -126,7 +113,7 @@
                             <p class="card-text">@item.Weight gram</p>
                             <div class="row" style="padding-left:12.5px;padding-right:12.5px">
                                 @item.Price SEK
-                                @Html.ActionLink("Choose", "ChooseBlade", "Product", new { id = item.BladeID }, new { @class = ClassHtmlBlade, @style = "float:right" })
+                                @Html.ActionLink("Choose", "ChooseBlade", "Product", new { id = item.BladeID }, new { @class = ClassHtml, @style = "float:right" })
                             </div>
                         </div>
                     </div>
@@ -140,7 +127,9 @@
             <div class="panel-body" style="padding: 10px">
                 @foreach (var item in Model.Handles)
                 {
-                    string ClassHtmlHandle = item.HandleID == Model.Product.ChosenHandle.HandleID ? "btn btn-default disabled" : "btn btn-danger";
+                    string ClassHtml = Model.Product.ChosenHandle == null ? "btn btn-danger"
+                            : item.HandleID == Model.Product.ChosenHandle.HandleID ? "btn btn-default disabled"
+                            : "btn btn-danger";
 
                     <div class="card list-group col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin:10px">
 
@@ -150,7 +139,7 @@
                             <p class="card-text">@item.Weight gram</p>
                             <div class="row" style="padding-left:12.5px;padding-right:12.5px">
                                 @item.Price SEK
-                                @Html.ActionLink("Choose", "ChooseHandle", "Product", new { id = item.HandleID }, new { @class = ClassHtmlHandle, @style = "float:right" })
+                                @Html.ActionLink("Choose", "ChooseHandle", "Product", new { id = item.HandleID }, new { @class = ClassHtml, @style = "float:right" })
                             </div>
                         </div>
                     </div>
@@ -164,7 +153,9 @@
         <div class="panel-body" style="padding: 10px">
             @foreach (var item in Model.ReelSeats)
             {
-                string ClassHtmlReelSeat = item.ReelSeatID == Model.Product.ChosenReelSeat.ReelSeatID ? "btn btn-default disabled" : "btn btn-danger";
+                string ClassHtml = Model.Product.ChosenReelSeat == null ? "btn btn-danger"
+                            : item.ReelSeatID == Model.Product.ChosenReelSeat.ReelSeatID ? "btn btn-default disabled"
+                            : "btn btn-danger";
 
                 <div class="card list-group col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin:10px">
 
@@ -174,7 +165,7 @@
                         <p class="card-text">@item.Weight gram</p>
                         <div class="row" style="padding-left:12.5px;padding-right:12.5px">
                             @item.Price SEK
-                            @Html.ActionLink("Choose", "ChooseReelSeat", "Product", new { id = item.ReelSeatID }, new { @class = ClassHtmlReelSeat, @style = "float:right" })
+                            @Html.ActionLink("Choose", "ChooseReelSeat", "Product", new { id = item.ReelSeatID }, new { @class = ClassHtml, @style = "float:right" })
                         </div>
                     </div>
                 </div>

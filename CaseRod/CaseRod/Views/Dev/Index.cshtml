@@ -151,9 +151,9 @@
                 <td style="width:25%">
                     @Html.ActionLink("Edit", "Edit", new { id = reelseat.ReelSeatID }) |
                     @Html.ActionLink("Details", "DetailsReelSeat", new { id = reelseat.ReelSeatID }) |
-                    <button type="button" class="btn-link" id="@("#deleteReelSeatButton" + reelseat.ReelSeatID)" data-toggle="modal" data-target="@("#deleteHandleModal" + reelseat.ReelSeatID)">Delete</button>
+                    <button type="button" class="btn-link" id="@("#deleteReelSeatButton" + reelseat.ReelSeatID)" data-toggle="modal" data-target="@("#deleteReelSeatModal" + reelseat.ReelSeatID)">Delete</button>
 
-                    <div class="modal fade" id="@("deleteHandleModal" + reelseat.ReelSeatID)" role="dialog">
+                    <div class="modal fade" id="@("deleteReelSeatModal" + reelseat.ReelSeatID)" role="dialog">
                         <div class="modal-dialog">
                             <!-- Modal content-->
                             <div class="modal-content">
