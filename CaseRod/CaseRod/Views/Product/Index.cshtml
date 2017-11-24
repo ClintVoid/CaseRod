@@ -8,16 +8,34 @@
 @{
     string BladeImage = Model.Product.ChosenBlade != null ? Model.Product.ChosenBlade.Image
         : "Klinga1.png";
+        
+    int BladePrice = Model.Product.ChosenBlade != null ? Model.Product.ChosenBlade.Price
+        : 0;
+
+    string BladeName = Model.Product.ChosenBlade != null ? Model.Product.ChosenBlade.Name
+        : "Blade not chosen.";
 
     string ReelSeatImage = Model.Product.ChosenReelSeat != null ? Model.Product.ChosenReelSeat.Image
         : "Rullfaste1.png";
 
+    int ReelSeatPrice = Model.Product.ChosenReelSeat != null ? Model.Product.ChosenReelSeat.Price
+    : 0;
+
+    string ReelSeatName = Model.Product.ChosenReelSeat != null ? Model.Product.ChosenReelSeat.Name
+    : "Reelseat not chosen.";
+
     string HandleImage = Model.Product.ChosenHandle != null ? Model.Product.ChosenHandle.Image
         : "Korkhandtag1.png";
+
+    int HandlePrice = Model.Product.ChosenHandle != null ? Model.Product.ChosenHandle.Price
+    : 0;
+
+    string HandleName = Model.Product.ChosenHandle != null ? Model.Product.ChosenHandle.Name
+    : "Handle not chosen.";
 }
 
 <div class="panel">
-    <div class="panel-body" style="padding: 10px 10px 10px 10px">
+    <div class="panel-body" style="padding: 10px">
         <div>
             <div class="card list-group col-lg-2 col-md-2 col-sm-3" style="margin:10px">
                 <img style="width: 100%; height: 183px; display: block;" src="~/Content/Images/Blades/@BladeImage" alt="Card image">
@@ -39,6 +57,43 @@
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
             </div>
+
+            <div class="panel col-lg-1 col-lg-5 col-md-5 col-sm-10" style="margin:10px">
+                <table class="table table-responsive" >
+                    <thead style="text-align:center">
+                        <tr style="text-align:center">
+                            <th>Product</th>
+                            <th>Weight</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@BladeName</td>
+                            <td>@Html.DisplayFor(model => model.Product.ChosenBlade.Weight)</td>
+                            <td>@BladePrice</td>
+                        </tr>
+                        <tr>
+                            <td>@HandleName</td>
+                            <td>@Html.DisplayFor(model => model.Product.ChosenHandle.Weight)</td>
+                            <td>@HandlePrice</td>
+                        </tr>
+                        <tr>
+                            <td>@ReelSeatName</td>
+                            <td>@Html.DisplayFor(model => model.Product.ChosenReelSeat.Weight)</td>
+                            <td>@ReelSeatPrice</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><strong>@Model.Product.Weight</strong></td>
+                            <td><strong>@Model.Product.Price</strong></td>
+                        </tr>
+                    </tbody>
+                    
+                </table>
+
+
+            </div>
         </div>
     </div>
 </div>
@@ -58,7 +113,7 @@
 <div id="myTabContent" class="tab-content panel">
     <div class="tab-pane fade active in" id="Blades">
         <div>
-            <div class="panel-body" style="padding: 10px 10px 10px 10px">
+            <div class="panel-body" style="padding: 10px">
                 @foreach (var item in Model.Blades)
                 {
                     string ClassHtmlBlade = item.BladeID == Model.Product.ChosenBlade.BladeID ? "btn btn-default disabled" : "btn btn-danger";
@@ -82,7 +137,7 @@
 
     <div class="tab-pane fade" id="Handles">
         <div>
-            <div class="panel-body">
+            <div class="panel-body" style="padding: 10px">
                 @foreach (var item in Model.Handles)
                 {
                     string ClassHtmlHandle = item.HandleID == Model.Product.ChosenHandle.HandleID ? "btn btn-default disabled" : "btn btn-danger";
@@ -106,7 +161,7 @@
 
     <div class="tab-pane fade" id="ReelSeats">
     <div>
-        <div class="panel-body">
+        <div class="panel-body" style="padding: 10px">
             @foreach (var item in Model.ReelSeats)
             {
                 string ClassHtmlReelSeat = item.ReelSeatID == Model.Product.ChosenReelSeat.ReelSeatID ? "btn btn-default disabled" : "btn btn-danger";

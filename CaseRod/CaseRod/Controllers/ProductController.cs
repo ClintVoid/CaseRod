@@ -28,10 +28,14 @@ namespace CaseRod.Controllers
 
                 Session["Product"] = Product;
 
+                SummarizeProductInfo();
+
                 Model.Product = Session["Product"] as Product;
 
                 return View(Model);
             }
+
+            SummarizeProductInfo();
 
             Model.Product = Session["Product"] as Product;
 
@@ -46,6 +50,8 @@ namespace CaseRod.Controllers
 
             Session["Product"] = Product;
 
+            SummarizeProductInfo();
+
             return RedirectToAction("Index");
         }
 
@@ -56,6 +62,8 @@ namespace CaseRod.Controllers
             Product.ChosenHandle = _database.Handles.Find(id);
 
             Session["Product"] = Product;
+
+            SummarizeProductInfo();
 
             return RedirectToAction("Index");
         }
@@ -68,7 +76,19 @@ namespace CaseRod.Controllers
 
             Session["Product"] = Product;
 
+            SummarizeProductInfo();
+
             return RedirectToAction("Index");
+        }
+
+        public void SummarizeProductInfo()
+        {
+            var Product = Session["Product"] as Product;
+
+            Product.Price = Product.ChosenBlade.Price + Product.ChosenHandle.Price + Product.ChosenReelSeat.Price;
+            Product.Weight = Product.ChosenBlade.Weight + Product.ChosenHandle.Weight + Product.ChosenReelSeat.Weight;
+
+            Session["Product"] = Product;
         }
     }
 }

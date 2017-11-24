@@ -161,7 +161,6 @@
     <Compile Include="Controllers\AccordionDesignController.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\DevController.cs" />
-    <Compile Include="Controllers\KristofferController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Migrations\201711160918035_InitialMigration.cs" />
     <Compile Include="Migrations\201711160918035_InitialMigration.Designer.cs">
@@ -269,7 +268,6 @@
     <Content Include="Views\Demo\Details.cshtml" />
     <Content Include="Views\Demo\Edit.cshtml" />
     <Content Include="Views\Demo\Index.cshtml" />
-    <Content Include="Views\Kristoffer\Index.cshtml" />
     <Content Include="Views\AccordionDesign\_Blades.cshtml" />
     <Content Include="Views\AccordionDesign\_Reelseats.cshtml" />
     <Content Include="Views\AccordionDesign\_Handles.cshtml" />
