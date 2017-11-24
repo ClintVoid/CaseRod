@@ -188,6 +188,7 @@
     <Content Include="Content\AccordionDesign.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Blades\default.png" />
     <Content Include="Content\Images\Blades\Klinga2.png" />
     <Content Include="Content\Images\Blades\Klinga1.png" />
     <Content Include="Content\Images\Blades\Klinga3.png" />
@@ -198,9 +199,11 @@
     <Content Include="Content\Images\Extras\Rodtube1.png" />
     <Content Include="Content\Images\Extras\Rodtube2.png" />
     <Content Include="Content\Images\Extras\Rodtube3.png" />
+    <Content Include="Content\Images\Handles\default.png" />
     <Content Include="Content\Images\Handles\Korkhandtag1.png" />
     <Content Include="Content\Images\Handles\Korkhandtag2.png" />
     <Content Include="Content\Images\Handles\Korkhandtag3.png" />
+    <Content Include="Content\Images\ReelSeats\default.png" />
     <Content Include="Content\Images\ReelSeats\Rullfaste1.png" />
     <Content Include="Content\Images\ReelSeats\Rullfaste2.png" />
     <Content Include="Content\Images\ReelSeats\Rullfaste3.png" />
