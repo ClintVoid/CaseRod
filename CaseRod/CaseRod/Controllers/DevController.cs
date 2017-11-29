@@ -19,7 +19,6 @@ namespace CaseRod.Controllers
                 Blades = _database.Blades.ToList(),
                 Handles = _database.Handles.ToList(),
                 ReelSeats = _database.ReelSeats.ToList(),
-                Texts = _database.Texts.ToList()
             };
 
             return View(Model);

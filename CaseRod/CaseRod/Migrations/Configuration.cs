@@ -29,13 +29,6 @@ namespace CaseRod.Migrations
             //
 
             //context.Database.Delete();
-
-            context.Texts.AddOrUpdate(
-                t => t.Name,
-                new Text { Name = "InfoText", Content = "LoremIpsum" },
-                new Text { Name = "AboutText", Content = "esbhfjkdfnsdf" },
-                new Text { Name = "ContactText", Content = "aghsfnjkdsdfdfsdfjhfd" }
-            );
             
             context.Blades.AddOrUpdate(
                 b => b.Name,
