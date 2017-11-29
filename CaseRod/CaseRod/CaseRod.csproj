@@ -176,6 +176,7 @@
     <Compile Include="Models\Entities\Handle.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Component.cs" />
+    <Compile Include="Models\Entities\Text.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Entities\ReelSeat.cs" />
     <Compile Include="Models\Product.cs" />

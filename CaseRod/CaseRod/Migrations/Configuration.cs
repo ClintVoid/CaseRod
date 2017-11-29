@@ -30,6 +30,13 @@ namespace CaseRod.Migrations
 
             //context.Database.Delete();
 
+            context.Texts.AddOrUpdate(
+                t => t.Name,
+                new Text { Name = "InfoText", Content = "LoremIpsum" },
+                new Text { Name = "AboutText", Content = "esbhfjkdfnsdf" },
+                new Text { Name = "ContactText", Content = "aghsfnjkdsdfdfsdfjhfd" }
+            );
+            
             context.Blades.AddOrUpdate(
                 b => b.Name,
                 new Blade { Name = "Blade1", Price = 1500, Weight = 670, Image = "Klinga1.png" },
