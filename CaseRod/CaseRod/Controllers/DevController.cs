@@ -18,15 +18,20 @@ namespace CaseRod.Controllers
             {
                 Blades = _database.Blades.ToList(),
                 Handles = _database.Handles.ToList(),
-                ReelSeats = _database.ReelSeats.ToList()
+                ReelSeats = _database.ReelSeats.ToList(),
+                Texts = _database.Texts.ToList()
             };
 
             return View(Model);
         }
 
         #region Delete
-
-
+        /*
+        public ActionResult EditText(int id, int content)  
+        {
+            Text text = _database.Texts.Find(id);
+           
+        } */
 
         [HttpPost, ActionName("Index")]
         [ValidateAntiForgeryToken]

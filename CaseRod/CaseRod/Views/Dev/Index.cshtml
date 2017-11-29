@@ -185,15 +185,17 @@
         }
     </tbody>
 </table>
-@*
+
     <legend>Edit Texts</legend>
     <table class="table table-hover table-bordered table-striped" style="text-align:center">
         <thead>
             <tr>
                 <td>@Html.DisplayNameFor(model => model.Texts.First().Name)</td>
                 <td>@Html.DisplayNameFor(model => model.Texts.First().Content)</td>
+                <td>Actions</td>
             </tr>
         </thead>
+
         <tbody>
             @foreach (var textitem in Model.Texts)
             {
@@ -202,11 +204,11 @@
                     <td>@textitem.Content</td>
                     <td style="width:25%">
                         @Html.ActionLink("Edit", "Edit", new { id = textitem.TextID }) |
-                        @Html.ActionLink("Details", "DetailsText", new { id = textitem.TextID }) |
+                        @Html.ActionLink("Details", "DetailsText", new { id = textitem.TextID })
 
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-*@
+
