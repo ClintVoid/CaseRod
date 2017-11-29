@@ -93,6 +93,11 @@
     <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#ReelSeats">Reel Seats</a>
     </li>
+    <li class="nav-item navbar-right">
+        <a class="nav-link" data-toggle="tab" href="#Info">
+            <span class="glyphicon glyphicon-info-sign"></span> Info
+        </a>
+    </li>
 </ul>
 
 <div id="myTabContent" class="tab-content panel">
@@ -149,29 +154,37 @@
     </div>
 
     <div class="tab-pane fade" id="ReelSeats">
-    <div>
-        <div class="panel-body" style="padding: 10px">
-            @foreach (var item in Model.ReelSeats)
-            {
-                string ClassHtml = Model.Product.ChosenReelSeat == null ? "btn btn-danger"
-                            : item.ReelSeatID == Model.Product.ChosenReelSeat.ReelSeatID ? "btn btn-default disabled"
-                            : "btn btn-danger";
+        <div>
+            <div class="panel-body" style="padding: 10px">
+                @foreach (var item in Model.ReelSeats)
+                {
+                    string ClassHtml = Model.Product.ChosenReelSeat == null ? "btn btn-danger"
+                                : item.ReelSeatID == Model.Product.ChosenReelSeat.ReelSeatID ? "btn btn-default disabled"
+                                : "btn btn-danger";
 
-                <div class="card list-group col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin:10px">
+                    <div class="card list-group col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin:10px">
 
-                    <img src="~/Content/Images/ReelSeats/@item.Image" style="width:100%; height:183px" alt="Card image">
-                    <div class="card-body" style="border-top:2px; border-top-color:black">
-                        <p class="card-text" style="text-align:center"><strong>@item.Name</strong></p>
-                        <p class="card-text">@item.Weight gram</p>
-                        <div class="row" style="padding-left:12.5px;padding-right:12.5px">
-                            @item.Price SEK
-                            @Html.ActionLink("Choose", "ChooseReelSeat", "Product", new { id = item.ReelSeatID }, new { @class = ClassHtml, @style = "float:right" })
+                        <img src="~/Content/Images/ReelSeats/@item.Image" style="width:100%; height:183px" alt="Card image">
+                        <div class="card-body" style="border-top:2px; border-top-color:black">
+                            <p class="card-text" style="text-align:center"><strong>@item.Name</strong></p>
+                            <p class="card-text">@item.Weight gram</p>
+                            <div class="row" style="padding-left:12.5px;padding-right:12.5px">
+                                @item.Price SEK
+                                @Html.ActionLink("Choose", "ChooseReelSeat", "Product", new { id = item.ReelSeatID }, new { @class = ClassHtml, @style = "float:right" })
+                            </div>
                         </div>
                     </div>
-                </div>
-            }
+                }
+            </div>
         </div>
     </div>
-</div>
 
+    <div class="tab-pane fade" id="Info">
+        <div>
+            <div class="panel-body" style="padding: 10px">
+                <h3>Header</h3>
+                <p>Text</p>
+            </div>
+        </div>
+    </div>
 </div>
