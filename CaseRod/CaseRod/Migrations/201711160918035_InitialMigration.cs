@@ -8,16 +8,6 @@ namespace CaseRod.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.Texts",
-                c => new
-                {
-                    TextID = c.Int(nullable: false, identity: true),
-                    Name = c.String(),
-                    Content = c.String()
-                })
-                .PrimaryKey(t => t.TextID);
-
-            CreateTable(
                 "dbo.Blades",
                 c => new
                     {
