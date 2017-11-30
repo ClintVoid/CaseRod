@@ -283,8 +283,7 @@
     <Content Include="Views\AccordionDesign\_Reelseats.cshtml" />
     <Content Include="Views\AccordionDesign\_Handles.cshtml" />
     <Content Include="Views\AccordionDesign\_Summary.cshtml" />
-    <None Include="Views\Product\Index3.cshtml" />
-    <Content Include="Views\Product\Blade.cshtml" />
+    <None Include="Views\Product\3Index.cshtml" />
     <Content Include="Views\Product\_DemoView.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
   </ItemGroup>

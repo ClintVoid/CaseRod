@@ -855,7 +855,8 @@ pre code {
 .col-lg-9,
 .col-lg-10,
 .col-lg-11,
-.col-lg-12 {
+.col-lg-12,
+.col-lg-15 {
   position: relative;
   min-height: 1px;
   padding-right: 0px;
@@ -1255,7 +1256,8 @@ pre code {
   .col-lg-8,
   .col-lg-9,
   .col-lg-10,
-  .col-lg-11 {
+  .col-lg-11,
+  .col-lg-15 {
     float: left;
   }
   .col-lg-1 {
@@ -1293,6 +1295,9 @@ pre code {
   }
   .col-lg-12 {
     width: 100%;
+  }
+  .col-lg-15 {
+    width: 20%;
   }
   .col-lg-push-0 {
     left: auto;
