@@ -171,5 +171,17 @@ namespace CaseRod.Controllers
             return View(reelSeat);
         }
         #endregion
+
+        #region Edit
+        public ActionResult EditText()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult EditText([Bind(Include = "TextID,Name,Content")] Text texts) 
+        {
+            return View(texts);
+        }
+        #endregion
     }
 }

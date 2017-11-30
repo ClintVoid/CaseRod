@@ -29,6 +29,11 @@ namespace CaseRod.Migrations
             //
 
             //context.Database.Delete();
+
+            context.Texts.AddOrUpdate(
+                t => t.Name, 
+                new Text { Name = "InfoText" , Content = "This is your info text about blades, handles and reelseats."}
+            );
             
             context.Blades.AddOrUpdate(
                 b => b.Name,
