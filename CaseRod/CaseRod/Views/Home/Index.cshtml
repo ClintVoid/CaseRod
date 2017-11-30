@@ -1,32 +1,26 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="jumbotron">
-    <h1>CaseRod</h1>
-    <p class="lead">Customize your own rod.</p>
-    <p>@Html.ActionLink("Build", "Index", "Product", null, new { @class = "btn btn-primary" })</p>
-    <p>@Html.ActionLink("AccordionRodBuild!", "Accordion", "AccordionDesign", null, new { @class = "btn btn-primary" })</p>
-</div>
+<body style="background-color: #f2f2f2">
+    <div class="col-lg-12" style="padding: 0 10px 0 10px; margin-bottom:20px; ">
+        <div style="height: 100%; width: 100%; background-color: white;">
+            <img src="~/Content/Images/background3.jpg" alt="Wide background" style="width: 100%; height: 50%" />
+        </div>
+    </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="col-lg-8 col-md-8" style="height: 400px; padding: 0 10px 0 10px; margin-bottom:20px;">
+        <div style="height: 100%; width: 100%; background-color: white; box-shadow: 0 2px 15px rgba(0,0,0,0.1)">
+            <p>Caserod will forfill all your flyfishing needs.</p>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <div class="col-lg-4 col-md-4" style="height: 400px; padding: 0 10px 0 10px; margin-bottom:20px;">
+        <div style="height: 100%; width: 100%; background-image: url(../../Content/Images/startrod.png); background-repeat: no-repeat; background-size: cover; background-color: white; box-shadow: 0 2px 15px rgba(0,0,0,0.1)">
+            <a href=@Url.Action("Index", "Product")>
+                <img src="~/Content/Images/StartCreating.png" alt="Start creating your flyrod now." style="width: 90%; height: 10%" />
+            </a>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+</body>

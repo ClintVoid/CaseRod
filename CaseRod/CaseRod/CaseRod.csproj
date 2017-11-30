@@ -187,6 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\AccordionDesign.css" />
+    <Content Include="Content\background3.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\Blades\default.png" />
@@ -216,6 +217,8 @@
     <Content Include="Content\Images\ReelSeats\RullfasteGold.png" />
     <Content Include="Content\Images\ReelSeats\RullfasteLightWood.png" />
     <Content Include="Content\Images\ReelSeats\RullfasteRed.png" />
+    <Content Include="Content\StartCreating.png" />
+    <Content Include="Content\startrod.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
