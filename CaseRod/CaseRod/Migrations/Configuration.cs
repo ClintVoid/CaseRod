@@ -34,7 +34,13 @@ namespace CaseRod.Migrations
                 b => b.Name,
                 new Blade { Name = "Blade1", Price = 1500, Weight = 670, Image = "Klinga1.png" },
                 new Blade { Name = "Blade2", Price = 1350, Weight = 700, Image = "Klinga2.png" },
-                new Blade { Name = "Blade3", Price = 1600, Weight = 600, Image = "Klinga3.png" }
+                new Blade { Name = "Blade3", Price = 1600, Weight = 600, Image = "Klinga3.png" },
+                new Blade { Name = "Blade4", Price = 1500, Weight = 670, Image = "Klinga1.png" },
+                new Blade { Name = "Blade5", Price = 1350, Weight = 700, Image = "Klinga2.png" },
+                new Blade { Name = "Blade6", Price = 1600, Weight = 600, Image = "Klinga3.png" },
+                new Blade { Name = "Blade7", Price = 1500, Weight = 670, Image = "Klinga1.png" },
+                new Blade { Name = "Blade8", Price = 1350, Weight = 700, Image = "Klinga2.png" },
+                new Blade { Name = "Blade9", Price = 1600, Weight = 600, Image = "Klinga3.png" }
             );
 
             context.Handles.AddOrUpdate(
