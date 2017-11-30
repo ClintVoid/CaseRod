@@ -288,6 +288,7 @@
     <None Include="Views\Product\3Index.cshtml" />
     <Content Include="Views\Product\_DemoView.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\_Modal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

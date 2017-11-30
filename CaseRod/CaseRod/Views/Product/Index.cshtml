@@ -8,6 +8,7 @@
 
 @{
     string BladeImage = Model.Product.ChosenBlade != null ? Model.Product.ChosenBlade.Image : "default.png";
+    
 
     string BladeName = Model.Product.ChosenBlade != null ? Model.Product.ChosenBlade.Name : "Blade not chosen.";
 
@@ -26,65 +27,46 @@
 
                 <div style="width:100%; height:100%; background-color:white; box-shadow: 0 2px 15px rgba(0,0,0,0.1)">
 
-                    <table class="table table-hover table-responsive">
+                    <table class="table table-hover">
                         <thead>
                             <tr>
-                                <td></td>
-                                <td>Name</td>
-                                <td>Weight</td>
-                                <td>Price</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="~/Content/Images/Blades/@BladeImage" style="height:106px" />
-                                </td>
-                                <td>@Html.DisplayFor(model => model.Product.ChosenBlade.Name)</td>
-                                <td>hej</td>
-                                <td>hej</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="~/Content/Images/Handles/@HandleImage" style="height:106px" />
-                                </td>
-                                <td>@Html.DisplayFor(model => model.Product.ChosenHandle.Name)</td>
-                                <td>hej</td>
-                                <td>hej</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="~/Content/Images/ReelSeats/@ReelSeatImage" style="height:106px" />
-                                </td>
-                                <td>@Html.DisplayFor(model => model.Product.ChosenReelSeat.Name)</td>
-                                <td>hej</td>
-                                <td>hej</td>
+                                <td colspan="2" class="col-xs-3 col-sm-8"></td>
+                                <td class="col-sm-2"><span style="font-weight:bold">Weight</span></td>
+                                <td class="col-sm-2"><span style="font-weight:bold">Price</span></td>
+                                
                             </tr>
                         </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img src="~/Content/Images/Blades/@BladeImage" style="height:100px" />
+                                </td>
+                                <td>This is some information about a product</td>
+                                <td><span style="font-weight:bold; font-size:18px">@Html.DisplayFor(model => model.Product.ChosenBlade.Weight) g</span></td>
+                                <td><span style="font-weight:bold; font-size:18px">@Html.DisplayFor(model => model.Product.ChosenBlade.Price):-</span></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="~/Content/Images/Handles/@HandleImage" style="height:100px" />
+                                </td>
+                                <td>This is some information about a product</td>
+                                <td><span style="font-weight:bold; font-size:18px">@Html.DisplayFor(model => model.Product.ChosenHandle.Weight) g</span></td>
+                                <td><span style="font-weight:bold; font-size:18px">@Html.DisplayFor(model => model.Product.ChosenHandle.Price):-</span></td>
+                                
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="~/Content/Images/ReelSeats/@ReelSeatImage" style="height:100px" />
+                                </td>
+                                <td>This is some information about a product</td>
+                                <td><span style="font-weight:bold; font-size:18px">@Html.DisplayFor(model => model.Product.ChosenReelSeat.Weight) g</span></td>
+                                <td><span style="font-weight:bold; font-size:18px">@Html.DisplayFor(model => model.Product.ChosenReelSeat.Price):-</span></td>
+                                
+                            </tr>
+                        </tbody>
 
                     </table>
-
-                    @*
-                    <div class="col-lg-12" style="padding: 10px; background-color:white; height: 33.33333333333333%; border-bottom:1px solid #e3e3e3;">
-                        <img src="~/Content/Images/Blades/@BladeImage" style="height:106px" />
-                    </div>
-
-                    <div class="col-lg-12" style="padding: 10px; background-color:white; height: 33.33333333333333%; border-bottom:1px solid #e3e3e3;">
-                        <div class="col-lg-3">
-                            <img src="~/Content/Images/Handles/@HandleImage" style="height:106px" />
-                        </div>
-                        <div class="col-lg-6">
-                            <p style="font-size:25px"><strong>@Model.Product.ChosenHandle.Name</strong></p>
-                            <p style="font-size:20px">@Model.Product.ChosenHandle.Weight</p> 
-                        </div>
-                        <div class="col-lg-3">
-                            <p style="font-size:35px;color:red">@Model.Product.ChosenHandle.Price</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12" style="padding: 10px; background-color:white; height: 33.33333333333333%;  ">
-                        <img src="~/Content/Images/ReelSeats/@ReelSeatImage" style="height:106px" />
-                    </div>
-                     *@
-
                 </div>
             </div>
 
@@ -114,7 +96,11 @@
                                     <div class="info">Part Number</div>
                                     <div class="style">@item.Weight g / 15.7 ft</div>
 
-                                    <div class="price">@item.Price :-</div><div>@Html.ActionLink("Add to Cart", "ChooseBlade", new { id = item.BladeID }, new { @class="btn btn-success" })</div>
+                                    <div style="padding:10px">
+                                        <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
+                                        <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseBlade", new { id = item.BladeID }, new { @class = "btn btn-default", @style="float:right"})</div>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -149,7 +135,7 @@
                     {
                         <div style="padding: 0px 10px 0px 10px; margin-bottom:20px" class="col-lg-15 col-md-3 col-sm-4 col-xs-6">
                             <div style="background-color:white; width:100%; height:100%">
-                                <a>
+                                <a data-toggle="modal" data-target=@("#Modal"+item.ReelSeatID)>
                                     <img src="~/Content/Images/ReelSeats/@item.Image" style="width:100%;height:230px; border:10px solid; border-color:white">
                                 </a>
 
@@ -161,6 +147,10 @@
                                     <div class="price">@item.Price :-</div><div>@Html.ActionLink("Add to Cart", "ChooseReelSeat", new { id = item.ReelSeatID }, new { @class = "btn btn-success" })</div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="modal fade" id=@("Modal"+item.ReelSeatID) role="dialog">
+                            @Html.Partial("_Modal", item)
                         </div>
                     }
             </div>
