@@ -200,8 +200,8 @@
     <Content Include="Content\Images\Extras\Rodtube2.png" />
     <Content Include="Content\Images\Extras\Rodtube3.png" />
     <Content Include="Content\Images\Handles\default.png" />
-    <Content Include="Content\Images\Handles\Handtag tvahands 1.png" />
-    <Content Include="Content\Images\Handles\Handtagtvahands 2.png" />
+    <Content Include="Content\Images\Handles\Handtagtvahands1.png" />
+    <Content Include="Content\Images\Handles\Handtagtvahands2.png" />
     <Content Include="Content\Images\Handles\Handtagtvahands3.png" />
     <Content Include="Content\Images\Handles\Korkhandtag1.png" />
     <Content Include="Content\Images\Handles\Korkhandtag2.png" />
