@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using CaseRod.Models;
 using CaseRod.ViewModels;
+using System.Data.Entity;
+using System.Net;
 
 namespace CaseRod.Controllers
 {
@@ -173,13 +175,29 @@ namespace CaseRod.Controllers
         #endregion
 
         #region Edit
-        public ActionResult EditText()
+        public ActionResult EditText(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+            Text text = _database.Texts.Find(id);
+            if (text == null)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(text);
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult EditText([Bind(Include = "TextID,Name,Content")] Text texts) 
         {
+            if (ModelState.IsValid)
+            {
+                _database.Entry(texts).State = EntityState.Modified;
+                _database.SaveChanges();
+                return RedirectToAction("Index");
+            }
             return View(texts);
         }
         #endregion

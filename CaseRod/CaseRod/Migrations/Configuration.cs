@@ -32,7 +32,9 @@ namespace CaseRod.Migrations
 
             context.Texts.AddOrUpdate(
                 t => t.Name, 
-                new Text { Name = "InfoText" , Content = "This is your info text about blades, handles and reelseats."}
+                new Text { Name = "InfoText" , Content = "This is your info text about blades, handles and reelseats."},
+                new Text { Name = "AboutText" , Content = "This is your text about."},
+                new Text { Name = "ContactText" , Content = "This is your contact information"}
             );
             
             context.Blades.AddOrUpdate(
@@ -68,6 +70,17 @@ namespace CaseRod.Migrations
                 new ReelSeat { Name = "ReelSeat6", Price = 700, Weight = 160, Image = "RullfasteGold.png" },
                 new ReelSeat { Name = "ReelSeat7", Price = 1100, Weight = 170, Image = "RullfasteLightWood.png" },
                 new ReelSeat { Name = "ReelSeat9", Price = 700, Weight = 160, Image = "RullfasteRed.png" }
+            );
+
+            context.Accessories.AddOrUpdate(
+                a => a.Name,
+                new Accessory { Name = "Case1", Price = 100, Weight = 100, Image = "Case1.png", Type = Models.Accessory.AccessoryType.Case },
+                new Accessory { Name = "Case2", Price = 100, Weight = 100, Image = "Case2.png", Type = Models.Accessory.AccessoryType.Case },
+                new Accessory { Name = "Case3", Price = 100, Weight = 100, Image = "Case3.png", Type = Models.Accessory.AccessoryType.Case },
+                new Accessory { Name = "Holder1", Price = 100, Weight = 100, Image = "Holder1.png", Type = Models.Accessory.AccessoryType.Holder },
+                new Accessory { Name = "RodTube1", Price = 100, Weight = 100, Image = "RodTube1.png", Type = Models.Accessory.AccessoryType.RodTube },
+                new Accessory { Name = "RodTube2", Price = 100, Weight = 100, Image = "RodTube2.png", Type = Models.Accessory.AccessoryType.RodTube },
+                new Accessory { Name = "RodTube3", Price = 100, Weight = 100, Image = "RodTube3.png", Type = Models.Accessory.AccessoryType.RodTube }
             );
 
 

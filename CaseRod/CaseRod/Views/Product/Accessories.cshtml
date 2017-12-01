@@ -1,4 +1,4 @@
-﻿@model CaseRod.ViewModels.BuildViewModel
+﻿@model CaseRod.ViewModels.AccessoriesViewModel
 @{
     ViewBag.Title = "Build your rod";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,33 +6,13 @@
 
 @Html.Partial("_DemoView")
 
-@{
-    string BladeImage = Model.Product.ChosenBlade != null ? Model.Product.ChosenBlade.Image : "default.png";
-    
-
-    string BladeName = Model.Product.ChosenBlade != null ? Model.Product.ChosenBlade.Name : "Blade not chosen.";
-
-    string ReelSeatImage = Model.Product.ChosenReelSeat != null ? Model.Product.ChosenReelSeat.Image : "default.png";
-
-    string ReelSeatName = Model.Product.ChosenReelSeat != null ? Model.Product.ChosenReelSeat.Name : "Reelseat not chosen.";
-
-    string HandleImage = Model.Product.ChosenHandle != null ? Model.Product.ChosenHandle.Image : "default.png";
-
-    string HandleName = Model.Product.ChosenHandle != null ? Model.Product.ChosenHandle.Name : "Handle not chosen.";
-}
-
 <body style="background-color:#f2f2f2">
     <div class="row">
-        <ul class="breadcrumb" style="margin-bottom:0px">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Library</a></li>
-            <li class="active">Data</li>
-        </ul>
 
         <div class="col-lg-8" style="height:400px; padding: 0 10px 0 10px; margin-bottom:20px">
             <div style="width:100%; height:100%; background-color:white; box-shadow: 0 2px 15px rgba(0,0,0,0.1)">
-                
-                @Html.ActionLink("Proceed >", "Accessories", null, new { @class = "btn btn-default" })
+
+                @Html.ActionLink("Proceed >", "Accessories", new { @class = "btn btn-default", @style = "" })
 
             </div>
         </div>
@@ -52,7 +32,7 @@
                     <tbody>
                         <tr>
                             <td>
-                                <img src="~/Content/Images/Blades/@BladeImage" style="height:100px" />
+                                <img src="~/Content/Images/Blades/@(Model.Product.ChosenBlade != null ? Model.Product.ChosenBlade.Image : "default.png")" style="height:100px" />
                             </td>
                             <td>This is some information about a product</td>
                             <td><span style="font-weight:bold; font-size:18px">@Html.DisplayFor(model => model.Product.ChosenBlade.Weight) g</span></td>
@@ -61,7 +41,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <img src="~/Content/Images/Handles/@HandleImage" style="height:100px" />
+                                <img src="~/Content/Images/Handles/@(Model.Product.ChosenHandle != null ? Model.Product.ChosenHandle.Image : "default.png")" style="height:100px" />
                             </td>
                             <td>This is some information about a product</td>
                             <td><span style="font-weight:bold; font-size:18px">@Html.DisplayFor(model => model.Product.ChosenHandle.Weight) g</span></td>
@@ -70,7 +50,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <img src="~/Content/Images/ReelSeats/@ReelSeatImage" style="height:100px" />
+                                <img src="~/Content/Images/ReelSeats/@(Model.Product.ChosenReelSeat != null ? Model.Product.ChosenReelSeat.Image : "default.png")" style="height:100px" />
                             </td>
                             <td>This is some information about a product</td>
                             <td><span style="font-weight:bold; font-size:18px">@Html.DisplayFor(model => model.Product.ChosenReelSeat.Weight) g</span></td>
@@ -85,51 +65,21 @@
         </div>
 
         <div style="padding: 0px 10px 0px 10px; margin-bottom:20px; width:100%">
-                <a class="btn btn-primary" href="#Blades" data-toggle="tab">Blades</a>
-                <a class="btn btn-default" href="#Handles" data-toggle="tab">Handles</a>
-                <a class="btn btn-default" href="#ReelSeats" data-toggle="tab">ReelSeats</a>
-                <a class="btn btn-default navbar-right" href="#Info" data-toggle="tab">Info</a>
+            <a class="btn btn-primary" href="#Cases" data-toggle="tab">Cases</a>
+            <a class="btn btn-default" href="#Holders" data-toggle="tab">Holders</a>
+            <a class="btn btn-default" href="#RodTubes" data-toggle="tab">Rodtubes</a>
+            <a class="btn btn-default navbar-right" href="#Info" data-toggle="tab">Info</a>
         </div>
 
         <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade active in" id="Blades">
-                    @foreach (var item in Model.Blades)
-                    {
-                        <div style="padding: 0px 10px 0px 10px; margin-bottom:20px" class="col-lg-15 col-md-3 col-sm-4 col-xs-6">
-                            <div style="background-color:white; width:100%; height:100%; box-shadow: 0 2px 15px rgba(0,0,0,0.1)">
-                                    <a data-toggle="modal" data-target=@("#Modal"+item.Name)>
-                                        <img src="~/Content/Images/Blades/@item.Image" style="width:100%;height:230px; border:10px solid; border-color:white">
-                                    </a>
-
-                                <div class="bottom">
-                                    <div class="heading">@item.Name</div>
-                                    <div class="info">Part Number</div>
-                                    <div class="style">@item.Weight g / 15.7 ft</div>
-
-                                    <div style="padding:10px">
-                                        <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
-                                        <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseBlade", new { id = item.ID }, new { @class = "btn btn-default", @style="float:right"})</div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <div class="modal fade" id=@("Modal"+item.Name) role="dialog">
-                                @Html.Partial("_BladeModal", item)
-                            </div>
-                        </div>
-                    }
-            </div>
-
-
-
-            <div class="tab-pane fade" id="Handles">
-                @foreach (var item in Model.Handles)
+            <div class="tab-pane fade active in" id="Cases">
+                @foreach (var item in Model.Cases)
                 {
                     <div style="padding: 0px 10px 0px 10px; margin-bottom:20px" class="col-lg-15 col-md-3 col-sm-4 col-xs-6">
                         <div style="background-color:white; width:100%; height:100%; box-shadow: 0 2px 15px rgba(0,0,0,0.1)">
-                                <a data-toggle="modal" data-target=@("#Modal"+item.Name)>
-                                    <img src="~/Content/Images/Handles/@item.Image" style="width:100%;height:230px; border:10px solid; border-color:white">
-                                </a>
+                            <a data-toggle="modal" data-target=@("#Modal"+item.Name)>
+                                <img src="~/Content/Images/Extras/@item.Image" style="width:100%;height:230px; border:10px solid; border-color:white">
+                            </a>
 
                             <div class="bottom">
                                 <div class="heading">@item.Name</div>
@@ -138,28 +88,28 @@
 
                                 <div style="padding:10px">
                                     <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
-                                    <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseHandle", new { id = item.ID }, new { @class = "btn btn-default", @style = "float:right" })</div>
+                                    <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseCase", new { id = item.ID }, new { @class = "btn btn-default", @style = "float:right" })</div>
                                 </div>
 
                             </div>
                         </div>
-                        <div class="modal fade" id=@("Modal"+item.Name) role="dialog">
-                            @Html.Partial("_HandleModal", item)
-                        </div>
+                        @*<div class="modal fade" id=@("modal"+item.name) role="dialog">
+                            @html.partial("_blademodal", item)
+                        </div>*@
                     </div>
                 }
             </div>
 
 
 
-            <div class="tab-pane fade" id="ReelSeats">
-                @foreach (var item in Model.ReelSeats)
+            <div class="tab-pane fade" id="Holders">
+                @foreach (var item in Model.Holders)
                 {
                     <div style="padding: 0px 10px 0px 10px; margin-bottom:20px" class="col-lg-15 col-md-3 col-sm-4 col-xs-6">
                         <div style="background-color:white; width:100%; height:100%; box-shadow: 0 2px 15px rgba(0,0,0,0.1)">
-                                <a data-toggle="modal" data-target=@("#Modal"+item.Name)>
-                                    <img src="~/Content/Images/ReelSeats/@item.Image" style="width:100%;height:230px; border:10px solid; border-color:white">
-                                </a>
+                            <a data-toggle="modal" data-target=@("#Modal"+item.Name)>
+                                <img src="~/Content/Images/Extras/@item.Image" style="width:100%;height:230px; border:10px solid; border-color:white">
+                            </a>
 
                             <div class="bottom">
                                 <div class="heading">@item.Name</div>
@@ -168,14 +118,44 @@
 
                                 <div style="padding:10px">
                                     <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
-                                    <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseReelSeat", new { id = item.ID }, new { @class = "btn btn-default", @style = "float:right" })</div>
+                                    <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseHolder", new { id = item.ID }, new { @class = "btn btn-default", @style = "float:right" })</div>
                                 </div>
 
                             </div>
                         </div>
-                        <div class="modal fade" id=@("Modal"+item.Name) role="dialog">
-                            @Html.Partial("_ReelSeatModal", item)
+                        @*<div class="modal fade" id=@("modal"+item.name) role="dialog">
+                            @html.partial("_handlemodal", item)
+                        </div>*@
+                    </div>
+                }
+            </div>
+
+
+
+            <div class="tab-pane fade" id="RodTubes">
+                @foreach (var item in Model.RodTubes)
+                {
+                    <div style="padding: 0px 10px 0px 10px; margin-bottom:20px" class="col-lg-15 col-md-3 col-sm-4 col-xs-6">
+                        <div style="background-color:white; width:100%; height:100%; box-shadow: 0 2px 15px rgba(0,0,0,0.1)">
+                            <a data-toggle="modal" data-target=@("#Modal"+item.Name)>
+                                <img src="~/Content/Images/Extras/@item.Image" style="width:100%;height:230px; border:10px solid; border-color:white">
+                            </a>
+
+                            <div class="bottom">
+                                <div class="heading">@item.Name</div>
+                                <div class="info">Part Number</div>
+                                <div class="style">@item.Weight g / 15.7 ft</div>
+
+                                <div style="padding:10px">
+                                    <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
+                                    <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseRodTubes", new { id = item.ID }, new { @class = "btn btn-default", @style = "float:right" })</div>
+                                </div>
+
+                            </div>
                         </div>
+                        @*<div class="modal fade" id=@("Modal"+item.Name) role="dialog">
+                            @Html.Partial("_ReelSeatModal", item)
+                        </div>*@
                     </div>
                 }
             </div>
@@ -184,7 +164,7 @@
 
             <div class="tab-pane fade" id="Info">
                 <p>Text</p>
-                
+
             </div>
 
         </div>

@@ -23,6 +23,7 @@ namespace CaseRod.Models
         public DbSet<Blade> Blades { get; set; }
         public DbSet<Handle> Handles { get; set; }
         public DbSet<ReelSeat> ReelSeats { get; set; }
+        public DbSet<Accessory> Accessories { get; set; }
         public DbSet<Text> Texts { get; set; }
 
         public ApplicationDbContext()
