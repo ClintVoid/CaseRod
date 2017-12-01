@@ -166,7 +166,16 @@
     <Compile Include="Migrations\201712010935007_TextsAndID.Designer.cs">
       <DependentUpon>201712010935007_TextsAndID.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712011339471_AddedAccessories.cs" />
+    <Compile Include="Migrations\201712011339471_AddedAccessories.Designer.cs">
+      <DependentUpon>201712011339471_AddedAccessories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712011410163_ChangedStructureOfAccessory.cs" />
+    <Compile Include="Migrations\201712011410163_ChangedStructureOfAccessory.Designer.cs">
+      <DependentUpon>201712011410163_ChangedStructureOfAccessory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Entities\Accessory.cs" />
     <Compile Include="Models\Entities\Blade.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -174,7 +183,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Entities\Handle.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\Component.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Entities\ReelSeat.cs" />
@@ -182,6 +191,7 @@
     <Compile Include="Models\Entities\Text.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\AccessoriesViewModel.cs" />
     <Compile Include="ViewModels\BuildViewModel.cs" />
     <Compile Include="ViewModels\DevViewModel.cs" />
   </ItemGroup>
@@ -194,13 +204,13 @@
     <Content Include="Content\Images\Blades\Klinga2.png" />
     <Content Include="Content\Images\Blades\Klinga1.png" />
     <Content Include="Content\Images\Blades\Klinga3.png" />
-    <Content Include="Content\Images\Extras\Fodral1.png" />
-    <Content Include="Content\Images\Extras\Fodral2.png" />
-    <Content Include="Content\Images\Extras\Fodral3.png" />
-    <Content Include="Content\Images\Extras\Krokhallare.png" />
-    <Content Include="Content\Images\Extras\Rodtube1.png" />
-    <Content Include="Content\Images\Extras\Rodtube2.png" />
-    <Content Include="Content\Images\Extras\Rodtube3.png" />
+    <Content Include="Content\Images\Extras\Case1.png" />
+    <Content Include="Content\Images\Extras\Case2.png" />
+    <Content Include="Content\Images\Extras\Case3.png" />
+    <Content Include="Content\Images\Extras\Holder1.png" />
+    <Content Include="Content\Images\Extras\RodTube1.png" />
+    <Content Include="Content\Images\Extras\RodTube2.png" />
+    <Content Include="Content\Images\Extras\RodTube3.png" />
     <Content Include="Content\Images\Handles\default.png" />
     <Content Include="Content\Images\Handles\Handtagtvahands1.png" />
     <Content Include="Content\Images\Handles\Handtagtvahands2.png" />
@@ -294,6 +304,7 @@
     <Content Include="Views\Product\_BladeModal.cshtml" />
     <Content Include="Views\Product\_HandleModal.cshtml" />
     <Content Include="Views\Product\_ReelSeatModal.cshtml" />
+    <Content Include="Views\Product\Accessories.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -308,6 +319,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712010935007_TextsAndID.resx">
       <DependentUpon>201712010935007_TextsAndID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712011339471_AddedAccessories.resx">
+      <DependentUpon>201712011339471_AddedAccessories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712011410163_ChangedStructureOfAccessory.resx">
+      <DependentUpon>201712011410163_ChangedStructureOfAccessory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -76,6 +76,36 @@ namespace CaseRod.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult ChooseCase(int? id) {
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult ChooseHolder(int? id)
+        {
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult ChooseRodTube(int? id)
+        {
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Accessories()
+        {
+
+            //User.UserActivities.Where(UserActivity => UserActivity.Activity == activity
+
+            var Model = new AccessoriesViewModel
+            {
+                Cases = _database.Accessories.Where(a => a.Type == Accessory.AccessoryType.Case).ToList(),
+                Holders = _database.Accessories.Where(a => a.Type == Accessory.AccessoryType.Holder).ToList(),
+                RodTubes = _database.Accessories.Where(a => a.Type == Accessory.AccessoryType.RodTube).ToList(),
+                Product = Session["Product"] as Product
+            };
+
+            return View(Model);
+        }
+
         public void SummarizeProductInfo()
         {
             var Product = Session["Product"] as Product;
@@ -104,11 +134,6 @@ namespace CaseRod.Controllers
             Session["Product"] = Product;
         }
 
-        public ActionResult Blade()
-        {
-            ViewBag.Session = Session.SessionID;
-
-            return View();
-        }
+        
     }
 }
