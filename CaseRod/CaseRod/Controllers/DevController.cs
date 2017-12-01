@@ -179,18 +179,18 @@ namespace CaseRod.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Index");
             }
             Text text = _database.Texts.Find(id);
             if (text == null)
             {
-                return HttpNotFound();
+                return RedirectToAction("Index");
             }
             return View(text);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditText([Bind(Include = "TextID,Content")] Text texts) 
+        public ActionResult EditText([Bind(Include = "TextID,Name,Content")] Text texts) 
         {
             if (ModelState.IsValid)
             {
