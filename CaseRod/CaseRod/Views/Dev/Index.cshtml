@@ -200,9 +200,9 @@
         {
             <tr>
                 <td style="width:25%">@textitem.Name</td>
-                <td>Show truncated text</td>
+                <td>@textitem.Content</td>
                 <td style="width:25%">
-                    @Html.ActionLink("Edit", "EditText", "Dev", new { id = textitem.TextID })
+                    @Html.ActionLink("Edit", "EditText", new { id = textitem.TextID })
                       
 
                                     @using (Html.BeginForm(new { id = textitem.TextID}))
