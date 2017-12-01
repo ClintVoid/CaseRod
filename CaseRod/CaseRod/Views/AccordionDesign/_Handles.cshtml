@@ -6,8 +6,8 @@
     <div class="products">
         @foreach (var handle in Model.Handles)
         {
-            var HandleID = 20 + @handle.HandleID;
-            <button class="button" id=@HandleID onclick="prdctclick(@HandleID)" style="background-color:white;">
+            var ID = 20 + @handle.ID;
+            <button class="button" id=@ID onclick="prdctclick(@ID)" style="background-color:white;">
                 <img src="~/Content/Images/Handles/@handle.Image" style="width:100px;height:100px;" /><br />
                 @handle.Name<br />
                 @handle.Weight gr

@@ -31,11 +31,11 @@
                 <td>@blade.Price</td>
                 <td>@blade.Weight</td>
                 <td style="width:25%">
-                    @Html.ActionLink("Edit", "Edit", new { id = blade.BladeID }) |
-                    @Html.ActionLink("Details", "DetailsBlade", new { id = blade.BladeID }) |
-                    <button type="button" class="btn-link" id="@("#deleteBladeButton" + blade.BladeID)" data-toggle="modal" data-target="@("#deleteBladeModal" + blade.BladeID)">Delete</button>
+                    @Html.ActionLink("Edit", "Edit", new { id = blade.ID }) |
+                    @Html.ActionLink("Details", "DetailsBlade", new { id = blade.ID }) |
+                    <button type="button" class="btn-link" id="@("#deleteBladeButton" + blade.ID)" data-toggle="modal" data-target="@("#deleteBladeModal" + blade.ID)">Delete</button>
 
-                    <div class="modal fade" id="@("deleteBladeModal" + blade.BladeID)" role="dialog">
+                    <div class="modal fade" id="@("deleteBladeModal" + blade.ID)" role="dialog">
                         <div class="modal-dialog">
                             <!-- Modal content-->
                             <div class="modal-content">
@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="modal-footer">
 
-                                    @using (Html.BeginForm(new { id = blade.BladeID, producttype = 1 }))
+                                    @using (Html.BeginForm(new { id = blade.ID, producttype = 1 }))
                                     {
                                         @Html.AntiForgeryToken()
 
@@ -93,11 +93,11 @@
                 <td>@handle.Price</td>
                 <td>@handle.Weight</td>
                 <td style="width:25%">
-                    @Html.ActionLink("Edit", "Edit", new { id = handle.HandleID }) |
-                    @Html.ActionLink("Details", "DetailsHandle", new { id = handle.HandleID }) |
-                    <button type="button" class="btn-link" id="@("#deleteHandleButton" + handle.HandleID)" data-toggle="modal" data-target="@("#deleteHandleModal" + handle.HandleID)">Delete</button>
+                    @Html.ActionLink("Edit", "Edit", new { id = handle.ID }) |
+                    @Html.ActionLink("Details", "DetailsHandle", new { id = handle.ID }) |
+                    <button type="button" class="btn-link" id="@("#deleteHandleButton" + handle.ID)" data-toggle="modal" data-target="@("#deleteHandleModal" + handle.ID)">Delete</button>
 
-                    <div class="modal fade" id="@("deleteHandleModal" + handle.HandleID)" role="dialog">
+                    <div class="modal fade" id="@("deleteHandleModal" + handle.ID)" role="dialog">
                         <div class="modal-dialog">
                             <!-- Modal content-->
                             <div class="modal-content">
@@ -110,7 +110,7 @@
                                 </div>
                                 <div class="modal-footer">
 
-                                    @using (Html.BeginForm(new { id = handle.HandleID, producttype = 2 }))
+                                    @using (Html.BeginForm(new { id = handle.ID, producttype = 2 }))
                                     {
                                         @Html.AntiForgeryToken()
 
@@ -149,11 +149,11 @@
                 <td>@reelseat.Price</td>
                 <td>@reelseat.Weight</td>
                 <td style="width:25%">
-                    @Html.ActionLink("Edit", "Edit", new { id = reelseat.ReelSeatID }) |
-                    @Html.ActionLink("Details", "DetailsReelSeat", new { id = reelseat.ReelSeatID }) |
-                    <button type="button" class="btn-link" id="@("#deleteReelSeatButton" + reelseat.ReelSeatID)" data-toggle="modal" data-target="@("#deleteReelSeatModal" + reelseat.ReelSeatID)">Delete</button>
+                    @Html.ActionLink("Edit", "Edit", new { id = reelseat.ID }) |
+                    @Html.ActionLink("Details", "DetailsReelSeat", new { id = reelseat.ID }) |
+                    <button type="button" class="btn-link" id="@("#deleteReelSeatButton" + reelseat.ID)" data-toggle="modal" data-target="@("#deleteReelSeatModal" + reelseat.ID)">Delete</button>
 
-                    <div class="modal fade" id="@("deleteReelSeatModal" + reelseat.ReelSeatID)" role="dialog">
+                    <div class="modal fade" id="@("deleteReelSeatModal" + reelseat.ID)" role="dialog">
                         <div class="modal-dialog">
                             <!-- Modal content-->
                             <div class="modal-content">
@@ -166,7 +166,7 @@
                                 </div>
                                 <div class="modal-footer">
 
-                                    @using (Html.BeginForm(new { id = reelseat.ReelSeatID, producttype = 3 }))
+                                    @using (Html.BeginForm(new { id = reelseat.ID, producttype = 3 }))
                                     {
                                         @Html.AntiForgeryToken()
 

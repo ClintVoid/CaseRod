@@ -6,7 +6,7 @@
     <div class="products">
         @foreach (var blade in Model.Blades)
         {
-            <button class="button" id=@blade.BladeID onclick="prdctclick(@blade.BladeID)" style="background-color:white;">
+            <button class="button" id=@blade.ID onclick="prdctclick(@blade.ID)" style="background-color:white;">
                 <img src="~/Content/Images/Blades/@blade.Image" style="width:100px;height:100px;" /><br />
                 @blade.Name<br />
                 @blade.Weight <br />

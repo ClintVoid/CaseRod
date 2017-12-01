@@ -108,7 +108,7 @@
                 @foreach (var item in Model.Blades)
                 {
                     string ClassHtml = Model.Product.ChosenBlade == null ? "btn btn-danger"
-                            : item.BladeID == Model.Product.ChosenBlade.BladeID ? "btn btn-default disabled"
+                            : item.ID == Model.Product.ChosenBlade.ID ? "btn btn-default disabled"
                             : "btn btn-danger";
                     
                     <div class="card list-group col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin:10px">
@@ -119,7 +119,7 @@
                             <p class="card-text">@item.Weight gram</p>
                             <div class="row" style="padding-left:12.5px;padding-right:12.5px">
                                 @item.Price SEK
-                                @Html.ActionLink("Choose", "ChooseBlade", "Product", new { id = item.BladeID }, new { @class = ClassHtml, @style = "float:right" })
+                                @Html.ActionLink("Choose", "ChooseBlade", "Product", new { id = item.ID }, new { @class = ClassHtml, @style = "float:right" })
                             </div>
                         </div>
                     </div>
@@ -134,7 +134,7 @@
                 @foreach (var item in Model.Handles)
                 {
                     string ClassHtml = Model.Product.ChosenHandle == null ? "btn btn-danger"
-                            : item.HandleID == Model.Product.ChosenHandle.HandleID ? "btn btn-default disabled"
+                            : item.ID == Model.Product.ChosenHandle.ID ? "btn btn-default disabled"
                             : "btn btn-danger";
 
                     <div class="card list-group col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin:10px">
@@ -145,7 +145,7 @@
                             <p class="card-text">@item.Weight gram</p>
                             <div class="row" style="padding-left:12.5px;padding-right:12.5px">
                                 @item.Price SEK
-                                @Html.ActionLink("Choose", "ChooseHandle", "Product", new { id = item.HandleID }, new { @class = ClassHtml, @style = "float:right" })
+                                @Html.ActionLink("Choose", "ChooseHandle", "Product", new { id = item.ID }, new { @class = ClassHtml, @style = "float:right" })
                             </div>
                         </div>
                     </div>
@@ -160,7 +160,7 @@
                 @foreach (var item in Model.ReelSeats)
                 {
                     string ClassHtml = Model.Product.ChosenReelSeat == null ? "btn btn-danger"
-                                : item.ReelSeatID == Model.Product.ChosenReelSeat.ReelSeatID ? "btn btn-default disabled"
+                                : item.ID == Model.Product.ChosenReelSeat.ID ? "btn btn-default disabled"
                                 : "btn btn-danger";
 
                     <div class="card list-group col-lg-2 col-md-3 col-sm-4 col-xs-6" style="margin:10px">
@@ -171,7 +171,7 @@
                             <p class="card-text">@item.Weight gram</p>
                             <div class="row" style="padding-left:12.5px;padding-right:12.5px">
                                 @item.Price SEK
-                                @Html.ActionLink("Choose", "ChooseReelSeat", "Product", new { id = item.ReelSeatID }, new { @class = ClassHtml, @style = "float:right" })
+                                @Html.ActionLink("Choose", "ChooseReelSeat", "Product", new { id = item.ID }, new { @class = ClassHtml, @style = "float:right" })
                             </div>
                         </div>
                     </div>

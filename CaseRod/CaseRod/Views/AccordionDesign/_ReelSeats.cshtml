@@ -6,7 +6,7 @@
     <div class="products">
         @foreach (var reelseat in Model.ReelSeats)
         {
-            var ReelID = 10 + @reelseat.ReelSeatID;
+            var ReelID = 10 + @reelseat.ID;
             
             <button class="button" id=@ReelID onclick="prdctclick(@ReelID)" style="background-color:white;">
                 <img src="~/Content/Images/ReelSeats/@reelseat.Image" style="width:100px;height:100px;" /><br />

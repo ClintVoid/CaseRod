@@ -7,6 +7,7 @@ namespace CaseRod.Models
 {
     public abstract class Component
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public string PartNumber { get; set; }
         public string Image { get; set; }

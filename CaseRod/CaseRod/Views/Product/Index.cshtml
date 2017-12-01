@@ -98,7 +98,7 @@
 
                                     <div style="padding:10px">
                                         <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
-                                        <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseBlade", new { id = item.BladeID }, new { @class = "btn btn-default", @style="float:right"})</div>
+                                        <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseBlade", new { id = item.ID }, new { @class = "btn btn-default", @style="float:right"})</div>
                                     </div>
                                     
                                 </div>
@@ -123,7 +123,7 @@
                                     <div class="info">Classic red converse edition</div>
                                     <div class="style">Weight: @item.Weight</div>
 
-                                    <div class="price">@item.Price :-</div><div>@Html.ActionLink("Add to Cart", "ChooseHandle", new { id = item.HandleID }, new { @class = "btn btn-success" })</div>
+                                    <div class="price">@item.Price :-</div><div>@Html.ActionLink("Add to Cart", "ChooseHandle", new { id = item.ID }, new { @class = "btn btn-success" })</div>
                                 </div>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
                     {
                         <div style="padding: 0px 10px 0px 10px; margin-bottom:20px" class="col-lg-15 col-md-3 col-sm-4 col-xs-6">
                             <div style="background-color:white; width:100%; height:100%">
-                                <a data-toggle="modal" data-target=@("#Modal"+item.ReelSeatID)>
+                                <a data-toggle="modal" data-target=@("#Modal"+item.ID)>
                                     <img src="~/Content/Images/ReelSeats/@item.Image" style="width:100%;height:230px; border:10px solid; border-color:white">
                                 </a>
 
@@ -144,12 +144,12 @@
                                     <div class="info">Classic red converse edition</div>
                                     <div class="style">Weight: @item.Weight</div>
 
-                                    <div class="price">@item.Price :-</div><div>@Html.ActionLink("Add to Cart", "ChooseReelSeat", new { id = item.ReelSeatID }, new { @class = "btn btn-success" })</div>
+                                    <div class="price">@item.Price :-</div><div>@Html.ActionLink("Add to Cart", "ChooseReelSeat", new { id = item.ID }, new { @class = "btn btn-success" })</div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="modal fade" id=@("Modal"+item.ReelSeatID) role="dialog">
+                        <div class="modal fade" id=@("Modal"+item.ID) role="dialog">
                             @Html.Partial("_Modal", item)
                         </div>
                     }

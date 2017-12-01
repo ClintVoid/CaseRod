@@ -123,7 +123,7 @@ namespace CaseRod.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateBlade([Bind(Include="BladeID,Name,PartNumber,Image,Weight,Price")] Blade blade)
+        public ActionResult CreateBlade([Bind(Include="ID,Name,PartNumber,Image,Weight,Price")] Blade blade)
         {
             if(ModelState.IsValid)
             {
@@ -141,7 +141,7 @@ namespace CaseRod.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateHandle([Bind(Include="BladeID,Name,PartNumber,Image,Weight,Price")] Handle handle)
+        public ActionResult CreateHandle([Bind(Include="ID,Name,PartNumber,Image,Weight,Price")] Handle handle)
         {
             if (ModelState.IsValid)
             {
@@ -159,7 +159,7 @@ namespace CaseRod.Controllers
         }
 
         [HttpPost]
-        public ActionResult CreateReelSeat([Bind(Include = "BladeID,Name,PartNumber,Image,Weight,Price")] ReelSeat reelSeat)
+        public ActionResult CreateReelSeat([Bind(Include = "ID,Name,PartNumber,Image,Weight,Price")] ReelSeat reelSeat)
         {
             if (ModelState.IsValid)
             {

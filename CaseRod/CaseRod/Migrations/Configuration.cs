@@ -10,7 +10,7 @@ namespace CaseRod.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(CaseRod.Models.ApplicationDbContext context)

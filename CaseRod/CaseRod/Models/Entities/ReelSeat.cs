@@ -7,6 +7,5 @@ namespace CaseRod.Models
 {
     public class ReelSeat: Component
     {
-        public int ReelSeatID { get; set; }
     }
 }

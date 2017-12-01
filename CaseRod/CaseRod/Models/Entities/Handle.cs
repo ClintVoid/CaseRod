@@ -7,6 +7,5 @@ namespace CaseRod.Models
 {
     public class Handle: Component
     {
-        public int HandleID { get; set; }
     }
 }

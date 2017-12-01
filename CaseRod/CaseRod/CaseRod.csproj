@@ -162,9 +162,9 @@
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\DevController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Migrations\201711160918035_InitialMigration.cs" />
-    <Compile Include="Migrations\201711160918035_InitialMigration.Designer.cs">
-      <DependentUpon>201711160918035_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201712010935007_TextsAndID.cs" />
+    <Compile Include="Migrations\201712010935007_TextsAndID.Designer.cs">
+      <DependentUpon>201712010935007_TextsAndID.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entities\Blade.cs" />
@@ -304,8 +304,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201711160918035_InitialMigration.resx">
-      <DependentUpon>201711160918035_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712010935007_TextsAndID.resx">
+      <DependentUpon>201712010935007_TextsAndID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -3,7 +3,7 @@ namespace CaseRod.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialMigration : DbMigration
+    public partial class TextsAndID : DbMigration
     {
         public override void Up()
         {
@@ -11,40 +11,40 @@ namespace CaseRod.Migrations
                 "dbo.Blades",
                 c => new
                     {
-                        BladeID = c.Int(nullable: false, identity: true),
+                        ID = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         PartNumber = c.String(),
                         Image = c.String(),
                         Price = c.Int(nullable: false),
                         Weight = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.BladeID);
+                .PrimaryKey(t => t.ID);
             
             CreateTable(
                 "dbo.Handles",
                 c => new
                     {
-                        HandleID = c.Int(nullable: false, identity: true),
+                        ID = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         PartNumber = c.String(),
                         Image = c.String(),
                         Price = c.Int(nullable: false),
                         Weight = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.HandleID);
+                .PrimaryKey(t => t.ID);
             
             CreateTable(
                 "dbo.ReelSeats",
                 c => new
                     {
-                        ReelSeatID = c.Int(nullable: false, identity: true),
+                        ID = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         PartNumber = c.String(),
                         Image = c.String(),
                         Price = c.Int(nullable: false),
                         Weight = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.ReelSeatID);
+                .PrimaryKey(t => t.ID);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -68,6 +68,16 @@ namespace CaseRod.Migrations
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
+            
+            CreateTable(
+                "dbo.Texts",
+                c => new
+                    {
+                        TextID = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                        Content = c.String(),
+                    })
+                .PrimaryKey(t => t.TextID);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -131,6 +141,7 @@ namespace CaseRod.Migrations
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
+            DropTable("dbo.Texts");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.ReelSeats");

@@ -46,7 +46,7 @@ namespace CaseRod.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BladeID,Name,PartNumber,Image,Price,Weight")] Blade blade)
+        public ActionResult Create([Bind(Include = "ID,Name,PartNumber,Image,Price,Weight")] Blade blade)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace CaseRod.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BladeID,Name,PartNumber,Image,Price,Weight")] Blade blade)
+        public ActionResult Edit([Bind(Include = "ID,Name,PartNumber,Image,Price,Weight")] Blade blade)
         {
             if (ModelState.IsValid)
             {
