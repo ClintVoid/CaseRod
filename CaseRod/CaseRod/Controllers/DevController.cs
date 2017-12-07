@@ -189,7 +189,7 @@ namespace CaseRod.Controllers
             return View(text);
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult EditText([Bind(Include = "TextID,Name,Content")] Text texts) 
         {
             if (ModelState.IsValid)
