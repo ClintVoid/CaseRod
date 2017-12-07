@@ -12,8 +12,6 @@
         <div class="col-lg-8" style="height:400px; padding: 0 10px 0 10px; margin-bottom:20px">
             <div style="width:100%; height:100%; background-color:white; box-shadow: 0 2px 15px rgba(0,0,0,0.1)">
 
-                @Html.ActionLink("Proceed >", "Accessories", new { @class = "btn btn-default", @style = "" })
-
             </div>
         </div>
 
@@ -88,7 +86,7 @@
 
                                 <div style="padding:10px">
                                     <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
-                                    <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseCase", new { id = item.ID }, new { @class = "btn btn-default", @style = "float:right" })</div>
+                                    <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseAccessory", new { id = item.ID }, new { @class = "btn btn-default", @style = "float:right" })</div>
                                 </div>
 
                             </div>
@@ -118,7 +116,7 @@
 
                                 <div style="padding:10px">
                                     <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
-                                    <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseHolder", new { id = item.ID }, new { @class = "btn btn-default", @style = "float:right" })</div>
+                                    <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseAccessory", new { id = item.ID }, new { @class = "btn btn-default", @style = "float:right" })</div>
                                 </div>
 
                             </div>
@@ -148,7 +146,7 @@
 
                                 <div style="padding:10px">
                                     <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
-                                    <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseRodTubes", new { id = item.ID }, new { @class = "btn btn-default", @style = "float:right" })</div>
+                                    <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseAccessory", new { id = item.ID }, new { @class = "btn btn-default", @style = "float:right" })</div>
                                 </div>
 
                             </div>
