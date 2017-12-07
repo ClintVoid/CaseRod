@@ -198,6 +198,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\AccordionDesign.css" />
+    <Content Include="Content\Images\Home\Fish1.png" />
+    <Content Include="Content\Images\Home\Fish2.png" />
+    <Content Include="Content\Images\Home\Fish3.png" />
     <Content Include="Content\Images\View\StartPage\Background.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
