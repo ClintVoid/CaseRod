@@ -32,7 +32,8 @@ namespace CaseRod.Migrations
 
             context.Texts.AddOrUpdate(
                 t => t.Name, 
-                new Text { Name = "InfoText" , Content = "This is your info text about blades, handles and reelseats."},
+                new Text { Name = "InfoOneHand" , Content = "This is your info text about blades, handles and reelseats.One-Hand"},
+                new Text { Name = "InfoTwoHand", Content = "This is your info text about blades, handles and reelseats. Two-hand" },
                 new Text { Name = "AboutText" , Content = "This is your text about."},
                 new Text { Name = "ContactText" , Content = "This is your contact information"}
             );
