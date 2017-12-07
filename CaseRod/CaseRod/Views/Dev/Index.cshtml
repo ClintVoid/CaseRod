@@ -200,7 +200,7 @@
         {
             <tr>
                 <td style="width:25%">@textitem.Name</td>
-                <td>@textitem.Content</td>
+                <td>@textitem.Content.Substring(0, Math.Min(textitem.Content.Length, 35))...</td>
                 <td style="width:25%">
                     @Html.ActionLink("Edit", "EditText", new { id = textitem.TextID })
                       
