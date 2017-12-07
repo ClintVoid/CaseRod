@@ -23,12 +23,6 @@
 
 <body style="background-color:#f2f2f2">
     <div class="row">
-        <ul class="breadcrumb" style="margin-bottom:0px">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Library</a></li>
-            <li class="active">Data</li>
-        </ul>
-
         <div class="col-lg-8" style="height:400px; padding: 0 10px 0 10px; margin-bottom:20px">
             <div style="width:100%; height:100%; background-color:white; box-shadow: 0 2px 15px rgba(0,0,0,0.1)">
                 
@@ -52,29 +46,29 @@
                     <tbody>
                         <tr>
                             <td>
-                                <img src="~/Content/Images/Blades/@BladeImage" style="height:100px" />
+                                <img src="~/Content/Images/Blades/@BladeImage" style="height:100px" id="blade"/>
                             </td>
-                            <td>This is some information about a product</td>
-                            <td><span style="font-weight:bold; font-size:18px">@Html.DisplayFor(model => model.Product.ChosenBlade.Weight) g</span></td>
-                            <td><span style="font-weight:bold; font-size:18px">@Html.DisplayFor(model => model.Product.ChosenBlade.Price):-</span></td>
+                            <td><span id="bladeName"></span></td>
+                            <td><span style="font-size:18px" id="bladeWeight"></span></td>
+                            <td><span style="font-size:18px" id="bladePrice"></span></td>
 
                         </tr>
                         <tr>
                             <td>
-                                <img src="~/Content/Images/Handles/@HandleImage" style="height:100px" />
+                                <img src="~/Content/Images/Handles/@HandleImage" style="height:100px" id="handle"/>
                             </td>
-                            <td>This is some information about a product</td>
-                            <td><span style="font-weight:bold; font-size:18px">@Html.DisplayFor(model => model.Product.ChosenHandle.Weight) g</span></td>
-                            <td><span style="font-weight:bold; font-size:18px">@Html.DisplayFor(model => model.Product.ChosenHandle.Price):-</span></td>
+                            <td><span id="handleName"></span></td>
+                            <td><span style="font-size:18px" id="handleWeight"></span></td>
+                            <td><span style="font-size:18px" id="handlePrice"></span></td>
 
                         </tr>
                         <tr>
                             <td>
-                                <img src="~/Content/Images/ReelSeats/@ReelSeatImage" style="height:100px" />
+                                <img src="~/Content/Images/ReelSeats/@ReelSeatImage" style="height:100px" id="reelSeat"/>
                             </td>
-                            <td>This is some information about a product</td>
-                            <td><span style="font-weight:bold; font-size:18px">@Html.DisplayFor(model => model.Product.ChosenReelSeat.Weight) g</span></td>
-                            <td><span style="font-weight:bold; font-size:18px">@Html.DisplayFor(model => model.Product.ChosenReelSeat.Price):-</span></td>
+                            <td><span id="reelSeatName"></span></td>
+                            <td><span style="font-size:18px" id="reelSeatWeight"></span></td>
+                            <td><span style="font-size:18px" id="reelSeatPrice"></span></td>
 
                         </tr>
                     </tbody>
@@ -85,11 +79,33 @@
         </div>
 
         <div style="padding: 0px 10px 0px 10px; margin-bottom:20px; width:100%">
-                <a class="btn btn-primary" href="#Blades" data-toggle="tab">Blades</a>
+                <a class="btn btn-default" href="#Blades" data-toggle="tab">Blades</a>
                 <a class="btn btn-default" href="#Handles" data-toggle="tab">Handles</a>
                 <a class="btn btn-default" href="#ReelSeats" data-toggle="tab">ReelSeats</a>
                 <a class="btn btn-default navbar-right" href="#Info" data-toggle="tab">Info</a>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade active in" id="Blades">
@@ -98,7 +114,7 @@
                         <div style="padding: 0px 10px 0px 10px; margin-bottom:20px" class="col-lg-15 col-md-3 col-sm-4 col-xs-6">
                             <div style="background-color:white; width:100%; height:100%; box-shadow: 0 2px 15px rgba(0,0,0,0.1)">
                                     <a data-toggle="modal" data-target=@("#Modal"+item.Name)>
-                                        <img src="~/Content/Images/Blades/@item.Image" style="width:100%;height:230px; border:10px solid; border-color:white">
+                                        <img src="~/Content/Images/Blades/@item.Image" style="width:100%;height:230px; border:10px solid; border-color:white" onclick="Choose()">
                                     </a>
 
                                 <div class="bottom">
@@ -108,7 +124,7 @@
 
                                     <div style="padding:10px">
                                         <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
-                                        <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseBlade", new { id = item.ID }, new { @class = "btn btn-default", @style="float:right"})</div>
+                                        <button class="btn btn-default" onclick="addToCart('@item.Image', '@item.Price', '@item.Weight', '@item.Name', 'blade')">Add to Cart</button>
                                     </div>
                                     
                                 </div>
@@ -119,6 +135,23 @@
                         </div>
                     }
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -138,7 +171,7 @@
 
                                 <div style="padding:10px">
                                     <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
-                                    <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseHandle", new { id = item.ID }, new { @class = "btn btn-default", @style = "float:right" })</div>
+                                    <button class="btn btn-default" onclick="addToCart('@item.Image', '@item.Price', '@item.Weight', '@item.Name', 'handle')">Add to Cart</button>
                                 </div>
 
                             </div>
@@ -168,7 +201,7 @@
 
                                 <div style="padding:10px">
                                     <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
-                                    <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseReelSeat", new { id = item.ID }, new { @class = "btn btn-default", @style = "float:right" })</div>
+                                    <button class="btn btn-default" onclick="addToCart('@item.Image', '@item.Price', '@item.Weight', '@item.Name', 'reelSeat')">Add to Cart</button>
                                 </div>
 
                             </div>
@@ -189,5 +222,25 @@
 
         </div>
     </div>
+
+<script language="javascript">
+    function addToCart(image, price, weight, name, component) {
+        var ImagePath;
+
+        switch(component)
+        {
+            case 'blade': ImagePath = "/Content/Images/Blades/" + image; break;
+            case 'handle': ImagePath = "/Content/Images/Handles/" + image; break;
+            case 'reelSeat': ImagePath = "/Content/Images/ReelSeats/" + image; break;
+        }
+
+        document.getElementById(component).src = ImagePath;
+        document.getElementById(component + 'Name').textContent = name;
+        document.getElementById(component + 'Price').textContent = price + " :-";
+        document.getElementById(component + 'Weight').textContent = weight + " g";
+    }
+</script>
 </body>
+
+
 

@@ -76,18 +76,8 @@ namespace CaseRod.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult ChooseCase(int? id) {
-            return RedirectToAction("Index");
-        }
-
-        public ActionResult ChooseHolder(int? id)
-        {
-            return RedirectToAction("Index");
-        }
-
-        public ActionResult ChooseRodTube(int? id)
-        {
-            return RedirectToAction("Index");
+        public ActionResult ChooseAccessory(int? id) {
+            return RedirectToAction("Accessories");
         }
 
         public ActionResult Accessories()
