@@ -21,7 +21,7 @@ namespace CaseRod.Controllers
                 Blades = _database.Blades.ToList(),
                 Handles = _database.Handles.ToList(),
                 ReelSeats = _database.ReelSeats.ToList(),
-                Texts = _database.Texts.ToList(),
+                Texts = _database.Texts.ToList()
             };
 
             return View(Model);
@@ -189,7 +189,7 @@ namespace CaseRod.Controllers
             return View(text);
         }
         [HttpPost]
-        [ValidateInput(false)]
+        [ValidateAntiForgeryToken]
         public ActionResult EditText([Bind(Include = "TextID,Name,Content")] Text texts) 
         {
             if (ModelState.IsValid)

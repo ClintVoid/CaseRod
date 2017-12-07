@@ -31,7 +31,8 @@ namespace CaseRod.Migrations
             //context.Database.Delete();
 
             context.Texts.AddOrUpdate(
-                t => t.Name, 
+                t => t.Name,
+                new Text { Name = "InfoAccessories", Content = "This is your info text about accessories" },
                 new Text { Name = "InfoOneHand" , Content = "This is your info text about blades, handles and reelseats.One-Hand"},
                 new Text { Name = "InfoTwoHand", Content = "This is your info text about blades, handles and reelseats. Two-hand" },
                 new Text { Name = "AboutText" , Content = "This is your text about."},

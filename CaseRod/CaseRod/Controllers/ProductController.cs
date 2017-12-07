@@ -101,6 +101,7 @@ namespace CaseRod.Controllers
                 Cases = _database.Accessories.Where(a => a.Type == Accessory.AccessoryType.Case).ToList(),
                 Holders = _database.Accessories.Where(a => a.Type == Accessory.AccessoryType.Holder).ToList(),
                 RodTubes = _database.Accessories.Where(a => a.Type == Accessory.AccessoryType.RodTube).ToList(),
+                Texts = _database.Texts.ToList(),
                 Product = Session["Product"] as Product
             };
 
