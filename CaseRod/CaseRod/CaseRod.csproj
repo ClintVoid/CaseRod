@@ -243,6 +243,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\Text\SampleTextProduct.docx" />
+    <Content Include="Content\Images\Icons\info-blue.png" />
+    <Content Include="Content\Images\Icons\info-grey.png" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

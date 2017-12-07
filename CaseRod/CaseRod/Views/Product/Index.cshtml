@@ -26,7 +26,40 @@
         <div class="col-lg-8" style="height:400px; padding: 0 10px 0 10px; margin-bottom:20px">
             <div style="width:100%; height:100%; background-color:white; box-shadow: 0 2px 15px rgba(0,0,0,0.1)">
                 
-                @Html.ActionLink("Proceed >", "Accessories", null, new { @class = "btn btn-default" })
+               @* @Html.ActionLink("Proceed >", "Accessories", null, new { @class = "btn btn-default" })*@
+
+                <div class="col-md-4 col-lg-4" >
+                    <img src="~/Content/Images/Blades/@BladeImage" style="width:100%" id="blade" />
+
+                    <div class="bottom">
+                        <p id="bladeName"></p>
+                        <p id="bladeWeight"></p>
+                        <p id="bladePrice"></p>
+                    </div>
+                </div>              
+
+                <div class="col-md-4 col-lg-4" >
+                    <img src="~/Content/Images/Handles/@HandleImage" style="width:100%" id="handle" />
+
+                    <div class="bottom">
+                        <p id="handleName"></p>
+                        <p id="handleWeight"></p>
+                        <p id="handlePrice"></p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-lg-4">
+                    <img src="~/Content/Images/ReelSeats/@ReelSeatImage" style="width:100%" id="reelSeat" />
+
+                    <div class="bottom">
+                        <p id="reelSeatName"></p>
+                        <p id="reelSeatWeight"></p>
+                        <p id="reelSeatPrice"></p>
+                    </div>
+                </div>
+
+
+
 
             </div>
         </div>
@@ -34,46 +67,12 @@
         <div class="col-lg-4 col-sm-12" style="height:400px; padding: 0 10px 0 10px; margin-bottom:20px">
             <div style="background-color:white; width:100%; height:100%; box-shadow: 0 2px 15px rgba(0,0,0,0.1);">
 
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <td colspan="2" class="col-xs-3 col-sm-8"></td>
-                            <td class="col-sm-2"><span style="font-weight:bold">Weight</span></td>
-                            <td class="col-sm-2"><span style="font-weight:bold">Price</span></td>
+        
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <img src="~/Content/Images/Blades/@BladeImage" style="height:100px" id="blade"/>
-                            </td>
-                            <td><span id="bladeName"></span></td>
-                            <td><span style="font-size:18px" id="bladeWeight"></span></td>
-                            <td><span style="font-size:18px" id="bladePrice"></span></td>
 
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="~/Content/Images/Handles/@HandleImage" style="height:100px" id="handle"/>
-                            </td>
-                            <td><span id="handleName"></span></td>
-                            <td><span style="font-size:18px" id="handleWeight"></span></td>
-                            <td><span style="font-size:18px" id="handlePrice"></span></td>
 
-                        </tr>
-                        <tr>
-                            <td>
-                                <img src="~/Content/Images/ReelSeats/@ReelSeatImage" style="height:100px" id="reelSeat"/>
-                            </td>
-                            <td><span id="reelSeatName"></span></td>
-                            <td><span style="font-size:18px" id="reelSeatWeight"></span></td>
-                            <td><span style="font-size:18px" id="reelSeatPrice"></span></td>
 
-                        </tr>
-                    </tbody>
 
-                </table>
 
             </div>
         </div>
@@ -92,39 +91,24 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade active in" id="Blades">
                     @foreach (var item in Model.Blades)
                     {
                         <div style="padding: 0px 10px 0px 10px; margin-bottom:20px" class="col-lg-15 col-md-3 col-sm-4 col-xs-6">
                             <div style="background-color:white; width:100%; height:100%; box-shadow: 0 2px 15px rgba(0,0,0,0.1)">
-                                    <a data-toggle="modal" data-target=@("#Modal"+item.Name)>
+                                    
                                         <img src="~/Content/Images/Blades/@item.Image" style="width:100%;height:230px; border:10px solid; border-color:white" onclick="Choose()">
-                                    </a>
+                                    
 
                                 <div class="bottom">
                                     <div class="heading">@item.Name</div>
                                     <div class="info">Part Number</div>
                                     <div class="style">@item.Weight g / 15.7 ft</div>
-
+                                    <div class="price col-lg-4" style="font-size:22px; align-content:center">@item.Price :-</div>
                                     <div style="padding:10px">
-                                        <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
-                                        <button class="btn btn-default" onclick="addToCart('@item.Image', '@item.Price', '@item.Weight', '@item.Name', 'blade')">Add to Cart</button>
+                                        <img src="~/Content/Images/Icons/info-grey.png" data-toggle="modal" data-target=@("#Modal"+item.Name) style="float:left" onmouseover="infoHover(this)" onmouseout="infoNormal(this)"></img>                                            
+                                        <button style="float:right"class="btn btn-default" onclick="addToCart('@item.Image', '@item.Price', '@item.Weight', '@item.Name', 'blade')">Add to Cart</button>
                                     </div>
                                     
                                 </div>
@@ -168,10 +152,11 @@
                                 <div class="heading">@item.Name</div>
                                 <div class="info">Part Number</div>
                                 <div class="style">@item.Weight g / 15.7 ft</div>
-
+                                <div class="price col-lg-4" style="font-size:22px; align-content:center">@item.Price :-</div>       
+                                  
                                 <div style="padding:10px">
-                                    <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
-                                    <button class="btn btn-default" onclick="addToCart('@item.Image', '@item.Price', '@item.Weight', '@item.Name', 'handle')">Add to Cart</button>
+                                        <img src="~/Content/Images/Icons/info-grey.png" data-toggle="modal" data-target=@("#Modal"+item.Name) style="float:left" onmouseover="infoHover(this)" onmouseout="infoNormal(this)"></img>
+                                        <button style="float:right" class="btn btn-default" onclick="addToCart('@item.Image', '@item.Price', '@item.Weight', '@item.Name', 'handle')">Add to Cart</button>
                                 </div>
 
                             </div>
@@ -198,10 +183,11 @@
                                 <div class="heading">@item.Name</div>
                                 <div class="info">Part Number</div>
                                 <div class="style">@item.Weight g / 15.7 ft</div>
+                                <div class="price col-lg-4" style="font-size:22px; align-content:center">@item.Price :-</div>
 
                                 <div style="padding:10px">
-                                    <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
-                                    <button class="btn btn-default" onclick="addToCart('@item.Image', '@item.Price', '@item.Weight', '@item.Name', 'reelSeat')">Add to Cart</button>
+                                    <img src="~/Content/Images/Icons/info-grey.png" data-toggle="modal" data-target=@("#Modal"+item.Name) style="float:left" onmouseover="infoHover(this)" onmouseout="infoNormal(this)"></img>
+                                    <button style="float:right" class="btn btn-default" onclick="addToCart('@item.Image', '@item.Price', '@item.Weight', '@item.Name', 'reelSeat')">Add to Cart</button>
                                 </div>
 
                             </div>
@@ -229,6 +215,15 @@
     </div>
 
 <script language="javascript">
+    function infoHover(element) {
+        element.src = "@Url.Content("/Content/Images/Icons/info-blue.png")";
+    }
+    function infoNormal(element){
+        element.src = "@Url.Content("/Content/Images/Icons/info-grey.png")";
+    }
+
+
+
     function addToCart(image, price, weight, name, component) {
         var ImagePath;
 
