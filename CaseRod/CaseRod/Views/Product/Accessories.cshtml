@@ -18,7 +18,7 @@
         <div class="col-lg-4 col-sm-12" style="height:400px; padding: 0 10px 0 10px; margin-bottom:20px">
             <div style="background-color:white; width:100%; height:100%; box-shadow: 0 2px 15px rgba(0,0,0,0.1);">
 
-                <table class="table table-hover">
+                @*<table class="table table-hover">
                     <thead>
                         <tr>
                             <td colspan="2" class="col-xs-3 col-sm-8"></td>
@@ -57,13 +57,13 @@
                         </tr>
                     </tbody>
 
-                </table>
+                </table>*@
 
             </div>
         </div>
 
         <div style="padding: 0px 10px 0px 10px; margin-bottom:20px; width:100%">
-            <a class="btn btn-primary" href="#Cases" data-toggle="tab">Cases</a>
+            <a class="btn btn-default" href="#Cases" data-toggle="tab">Cases</a>
             <a class="btn btn-default" href="#Holders" data-toggle="tab">Holders</a>
             <a class="btn btn-default" href="#RodTubes" data-toggle="tab">Rodtubes</a>
             <a class="btn btn-default navbar-right" href="#Info" data-toggle="tab">Info</a>
@@ -83,17 +83,17 @@
                                 <div class="heading">@item.Name</div>
                                 <div class="info">Part Number</div>
                                 <div class="style">@item.Weight g / 15.7 ft</div>
-
+                                <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
                                 <div style="padding:10px">
-                                    <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
+                                    <img src="~/Content/Images/Icons/info-grey.png" data-toggle="modal" data-target=@("#Modal"+item.Name) style="float:left" onmouseover="infoHover(this)" onmouseout="infoNormal(this)">
                                     <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseAccessory", new { id = item.ID }, new { @class = "btn btn-default", @style = "float:right" })</div>
                                 </div>
 
                             </div>
                         </div>
-                        @*<div class="modal fade" id=@("modal"+item.name) role="dialog">
-                            @html.partial("_blademodal", item)
-                        </div>*@
+                        <div class="modal fade" id=@("Modal"+item.Name) role="dialog">
+                            @Html.Partial("_extramodal", item)
+                        </div>
                     </div>
                 }
             </div>
@@ -113,17 +113,18 @@
                                 <div class="heading">@item.Name</div>
                                 <div class="info">Part Number</div>
                                 <div class="style">@item.Weight g / 15.7 ft</div>
+                                <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
 
                                 <div style="padding:10px">
-                                    <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
+                                    <img src="~/Content/Images/Icons/info-grey.png" data-toggle="modal" data-target=@("#Modal"+item.Name) style="float:left" onmouseover="infoHover(this)" onmouseout="infoNormal(this)">
                                     <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseAccessory", new { id = item.ID }, new { @class = "btn btn-default", @style = "float:right" })</div>
                                 </div>
 
                             </div>
                         </div>
-                        @*<div class="modal fade" id=@("modal"+item.name) role="dialog">
-                            @html.partial("_handlemodal", item)
-                        </div>*@
+                        <div class="modal fade" id=@("Modal"+item.Name) role="dialog">
+                            @Html.Partial("_extramodal", item)
+                        </div>
                     </div>
                 }
             </div>
@@ -143,17 +144,18 @@
                                 <div class="heading">@item.Name</div>
                                 <div class="info">Part Number</div>
                                 <div class="style">@item.Weight g / 15.7 ft</div>
+                                <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
 
                                 <div style="padding:10px">
-                                    <div class="price col-lg-4" style="font-size:22px">@item.Price :-</div>
+                                    <img src="~/Content/Images/Icons/info-grey.png" data-toggle="modal" data-target=@("#Modal"+item.Name) style="float:left" onmouseover="infoHover(this)" onmouseout="infoNormal(this)">
                                     <div class="col-lg-8">@Html.ActionLink("Add to Cart", "ChooseAccessory", new { id = item.ID }, new { @class = "btn btn-default", @style = "float:right" })</div>
                                 </div>
 
                             </div>
                         </div>
-                        @*<div class="modal fade" id=@("Modal"+item.Name) role="dialog">
-                            @Html.Partial("_ReelSeatModal", item)
-                        </div>*@
+                        <div class="modal fade" id=@("Modal"+item.Name) role="dialog">
+                            @Html.Partial("_extramodal", item)
+                        </div>
                     </div>
                 }
             </div>
@@ -177,5 +179,39 @@
 
         </div>
     </div>
+
+
+
+    <script language="javascript">
+    function infoHover(element) {
+        element.src = "@Url.Content("/Content/Images/Icons/info-blue.png")";
+    }
+    function infoNormal(element){
+        element.src = "@Url.Content("/Content/Images/Icons/info-grey.png")";
+    }
+
+
+
+    //function addToCart(image, price, weight, name, component) {
+    //    var ImagePath;
+
+    //    switch(component)
+    //    {
+    //        case 'cases': ImagePath = "/Content/Images/Extras/" + image; break;
+    //        case 'holder': ImagePath = "/Content/Images/Handles/" + image; break;
+    //        case 'rodTubes': ImagePath = "/Content/Images/ReelSeats/" + image; break;
+    //    }
+
+    //    document.getElementById(component).src = ImagePath;
+    //    document.getElementById(component + 'Name').textContent = name;
+    //    document.getElementById(component + 'Price').textContent = price + " :-";
+    //    document.getElementById(component + 'Weight').textContent = weight + " g";
+    //}
+    </script>
+
+
+
+
+
 </body>
 

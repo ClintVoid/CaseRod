@@ -313,6 +313,7 @@
     <Content Include="Views\Product\_HandleModal.cshtml" />
     <Content Include="Views\Product\_ReelSeatModal.cshtml" />
     <Content Include="Views\Product\Accessories.cshtml" />
+    <Content Include="Views\Product\_ExtraModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
