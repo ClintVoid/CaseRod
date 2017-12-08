@@ -309,11 +309,7 @@
     <Content Include="Views\Dev\EditText.cshtml" />
     <Content Include="Views\Product\_DemoView.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
-    <Content Include="Views\Product\_BladeModal.cshtml" />
-    <Content Include="Views\Product\_HandleModal.cshtml" />
-    <Content Include="Views\Product\_ReelSeatModal.cshtml" />
     <Content Include="Views\Product\Accessories.cshtml" />
-    <Content Include="Views\Product\_ExtraModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
