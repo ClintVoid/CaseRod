@@ -4,11 +4,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
 @Html.Partial("_DemoView")
 
 @{
     string BladeImage = Model.Product.ChosenBlade != null ? Model.Product.ChosenBlade.Image : "default.png";
-    
 
     string BladeName = Model.Product.ChosenBlade != null ? Model.Product.ChosenBlade.Name : "Blade not chosen.";
 
@@ -107,7 +112,7 @@
                                     <div class="style">@item.Weight g / 15.7 ft</div>
                                     <div class="price" style="font-size:22px; align-content:center">@item.Price :-</div>
                                     <div style="padding:10px">
-                                        <img src="~/Content/Images/Icons/info-grey.png" data-toggle="modal" data-target=@("#Modal"+item.Name) style="float:left" onmouseover="infoHover(this)" onmouseout="infoNormal(this)">                                           
+                                        <img src="~/Content/Images/Icons/info-grey.png" data-toggle="modal" data-target="#myModal" data-price="@item.Price" data-image="@item.Image" data-name="@item.Name" data-weight="@item.Weight" style="float:left" onmouseover="infoHover(this)" onmouseout="infoNormal(this)">                                           
                                         <button style="float:right"class="btn btn-default" onclick="addToCart('@item.Image', '@item.Price', '@item.Weight', '@item.Name', 'blade')">Add to Cart</button>
                                     </div>
                                     
@@ -214,6 +219,26 @@
         </div>
     </div>
 
+    <div class="modal modal-lg fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Product Name</h4>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 <script language="javascript">
     function infoHover(element) {
         element.src = "@Url.Content("/Content/Images/Icons/info-blue.png")";
@@ -221,8 +246,6 @@
     function infoNormal(element){
         element.src = "@Url.Content("/Content/Images/Icons/info-grey.png")";
     }
-
-
 
     function addToCart(image, price, weight, name, component) {
         var ImagePath;
@@ -239,8 +262,27 @@
         document.getElementById(component + 'Price').textContent = price + " :-";
         document.getElementById(component + 'Weight').textContent = weight + " g";
     }
+
+    $('#myModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var image = button.data('image') 
+        var price = button.data('price')
+        var weight = button.data('weight')
+        var name = button.data('name')
+        var content = '<img class="col-lg-6   col-sm-12 col-xs-12" src="/Content/Images/Blades/' + image + '"/> \
+                       <ul class="list-group col-lg-6"> \
+                            <li class="list-group-item"><strong>Name</strong><span style="float:right">' + name + '</span></li> \
+                            <li class="list-group-item"><strong>Price</strong><span style="float:right">' + price + '</span></li> \
+                            <li class="list-group-item"><strong>Weight</strong><span style="float:right">' + weight + '</span></li> \
+                       </ul> \
+                       <div class="col-lg-6">Proin pulvinar elit vitae maximus iaculis. Aliquam porta ac magna quis tristique. In non pretium lectus, eget finibus velit. Phasellus suscipit gravida libero, tincidunt gravida erat scelerisque in. Phasellus semper risus eget turpis maximus maximus. Proin sit amet ex non sapien viverra gravida. Pellentesque id leo augue.</div>'
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').html('<h3>' + name + '</h3>')
+        modal.find('.modal-body').html(content)
+    })
 </script>
 </body>
-
 
 
