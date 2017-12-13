@@ -12,20 +12,6 @@
 
 @Html.Partial("_DemoView")
 
-@{
-    string BladeImage = Model.Product.ChosenBlade != null ? Model.Product.ChosenBlade.Image : "default.png";
-
-    string BladeName = Model.Product.ChosenBlade != null ? Model.Product.ChosenBlade.Name : "Blade not chosen.";
-
-    string ReelSeatImage = Model.Product.ChosenReelSeat != null ? Model.Product.ChosenReelSeat.Image : "default.png";
-
-    string ReelSeatName = Model.Product.ChosenReelSeat != null ? Model.Product.ChosenReelSeat.Name : "Reelseat not chosen.";
-
-    string HandleImage = Model.Product.ChosenHandle != null ? Model.Product.ChosenHandle.Image : "default.png";
-
-    string HandleName = Model.Product.ChosenHandle != null ? Model.Product.ChosenHandle.Name : "Handle not chosen.";
-}
-
 <body style="background-color:#f2f2f2">
     <div class="row">
         <div class="col-lg-8" style="height:400px; padding: 0 10px 0 10px; margin-bottom:20px">
@@ -34,7 +20,7 @@
                @* @Html.ActionLink("Proceed >", "Accessories", null, new { @class = "btn btn-default" })*@
 
                 <div class="col-md-4 col-lg-4" >
-                    <img src="~/Content/Images/Blades/@BladeImage" style="width:100%; padding: 10px 5px 10px 10px; height:250px" id="blade" />
+                    <img src="~/Content/Images/Blades/@(Model.Cart.Blade != null ? Model.Cart.Blade.Image : "default.png")" style="width:100%; padding: 10px 5px 10px 10px; height:250px" id="blade" />
 
                     <div class="bottom">
                         <p style="font-size:22px"id="bladeName"></p>
@@ -44,7 +30,7 @@
                 </div>              
 
                 <div class="col-md-4 col-lg-4" >
-                    <img src="~/Content/Images/Handles/@HandleImage" style="width:100%; padding: 10px 5px 10px 5px; height:250px" id="handle" />
+                    <img src="~/Content/Images/Handles/default.png" style="width:100%; padding: 10px 5px 10px 5px; height:250px" id="handle" />
 
                     <div class="bottom">
                         <p style="font-size:22px" id="handleName"></p>
@@ -54,7 +40,7 @@
                 </div>
 
                 <div class="col-md-4 col-lg-4">
-                    <img src="~/Content/Images/ReelSeats/@ReelSeatImage" style="width:100%; padding: 10px 10px 10px 5px;  height:250px" id="reelSeat" />
+                    <img src="~/Content/Images/ReelSeats/default.png" style="width:100%; padding: 10px 10px 10px 5px;  height:250px" id="reelSeat" />
 
                     <div class="bottom">
                         <p style="font-size:22px" id="reelSeatName"></p>
