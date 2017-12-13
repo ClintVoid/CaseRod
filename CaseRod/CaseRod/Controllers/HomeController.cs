@@ -38,5 +38,19 @@ namespace CaseRod.Controllers
 
             return View(Model);
         }
+
+        public ActionResult PaymentShipping()
+        {
+            var Model = new PaymentViewModel
+            {
+                PaymentHeader = _database.Texts.Find("PaymentHeader"),
+                PaymentBody = _database.Texts.Find("PaymentBody"),
+                ShippingHeader = _database.Texts.Find("ShippingHeader"),
+                ShippingBody = _database.Texts.Find("ShippingBody"),
+            };
+
+            return View(Model);
+        }
+
     }
 }

@@ -175,13 +175,13 @@ namespace CaseRod.Controllers
         #endregion
 
         #region Edit
-        public ActionResult EditText(int? id)
+        public ActionResult EditText(string name)
         {
-            if (id == null)
+            if (name == null)
             {
                 return RedirectToAction("Index");
             }
-            Text text = _database.Texts.Find(id);
+            Text text = _database.Texts.Find(name);
             if (text == null)
             {
                 return RedirectToAction("Index");
@@ -190,7 +190,7 @@ namespace CaseRod.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditText([Bind(Include = "TextID,Name,Content")] Text texts) 
+        public ActionResult EditText([Bind(Include = "Name,Content")] Text texts) 
         {
             if (ModelState.IsValid)
             {

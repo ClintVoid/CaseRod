@@ -174,6 +174,10 @@
     <Compile Include="Migrations\201712011410163_ChangedStructureOfAccessory.Designer.cs">
       <DependentUpon>201712011410163_ChangedStructureOfAccessory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712131458487_ChangeTextIDToName.cs" />
+    <Compile Include="Migrations\201712131458487_ChangeTextIDToName.Designer.cs">
+      <DependentUpon>201712131458487_ChangeTextIDToName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entities\Accessory.cs" />
     <Compile Include="Models\Entities\Blade.cs" />
@@ -195,13 +199,14 @@
     <Compile Include="ViewModels\AccessoriesViewModel.cs" />
     <Compile Include="ViewModels\BuildViewModel.cs" />
     <Compile Include="ViewModels\DevViewModel.cs" />
+    <Compile Include="ViewModels\PaymentViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\AccordionDesign.css" />
-    <Content Include="Content\Images\Home\Fish1.png" />
-    <Content Include="Content\Images\Home\Fish2.png" />
-    <Content Include="Content\Images\Home\Fish3.png" />
-    <Content Include="Content\Images\View\StartPage\Background.jpg" />
+    <Content Include="Content\Images\Home\Fish1.jpg" />
+    <Content Include="Content\Images\Home\Fish2.jpg" />
+    <Content Include="Content\Images\Home\Fish3.jpg" />
+    <Content Include="Content\Images\View\StartPage\Background1.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\Blades\default.png" />
@@ -232,6 +237,8 @@
     <Content Include="Content\Images\ReelSeats\RullfasteLightWood.png" />
     <Content Include="Content\Images\ReelSeats\RullfasteRed.png" />
     <Content Include="Content\Images\View\StartPage\One-handed.jpg" />
+    <Content Include="Content\Images\View\StartPage\ContactPic.png" />
+    <Content Include="Content\Images\View\StartPage\PaymentShippingPic.png" />
     <Content Include="Content\Images\View\StartPage\StartCreatingText.png" />
     <Content Include="Content\Images\View\StartPage\StartCreating.png" />
     <Content Include="Content\Images\View\StartPage\Two-handed.jpg" />
@@ -310,6 +317,7 @@
     <Content Include="Views\Product\_DemoView.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\Accessories.cshtml" />
+    <Content Include="Views\Home\PaymentShipping.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -330,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712011410163_ChangedStructureOfAccessory.resx">
       <DependentUpon>201712011410163_ChangedStructureOfAccessory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712131458487_ChangeTextIDToName.resx">
+      <DependentUpon>201712131458487_ChangeTextIDToName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

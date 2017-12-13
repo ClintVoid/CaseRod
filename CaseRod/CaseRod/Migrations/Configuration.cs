@@ -32,6 +32,10 @@ namespace CaseRod.Migrations
 
             context.Texts.AddOrUpdate(
                 t => t.Name,
+                new Text { Name = "PaymentHeader", Content = "Payment Header" },
+                new Text { Name = "PaymentBody", Content = "Payment Body"},
+                new Text { Name = "ShippingHeader", Content = "Shipping Header" },
+                new Text { Name = "ShippingBody", Content = "Shipping Body" },
                 new Text { Name = "InfoAccessories", Content = "This is your info text about accessories" },
                 new Text { Name = "InfoOneHand" , Content = "This is your info text about blades, handles and reelseats.One-Hand"},
                 new Text { Name = "InfoTwoHand", Content = "This is your info text about blades, handles and reelseats. Two-hand" },
