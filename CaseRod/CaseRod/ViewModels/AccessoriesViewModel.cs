@@ -12,6 +12,6 @@ namespace CaseRod.ViewModels
         public List<Accessory> Holders { get; set; }
         public List<Accessory> RodTubes { get; set; }
         public List<Text> Texts { get; set; }
-        public Product Product { get; set; }
+        public Cart Cart { get; set; }
     }
 }

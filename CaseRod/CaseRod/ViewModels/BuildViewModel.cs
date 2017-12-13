@@ -12,6 +12,6 @@ namespace CaseRod.ViewModels
         public List<Handle> Handles { get; set; }
         public List<ReelSeat> ReelSeats { get; set; }
         public List<Text> Texts { get; set; }
-        public Product Product { get; set; }
+        public Cart Cart { get; set; }
     }
 }

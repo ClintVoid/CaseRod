@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CaseRod.ViewModels;
-using CaseRod.Models;  
+using CaseRod.Models;
+using CaseRod.Controllers;
 
 namespace CaseRod.Controllers
 {
@@ -12,120 +13,67 @@ namespace CaseRod.Controllers
     {
         private ApplicationDbContext _database = new ApplicationDbContext();
 
+       
+
+
         public ActionResult Index()
         {
+            AuthorizeCookie();
+
+            int defaultVal = 1;
+            var CustomerCart = new Cart
+            {
+                Blade = _database.Blades.Find(defaultVal),
+                Handle = _database.Handles.Find(defaultVal),
+                ReelSeat = _database.ReelSeats.Find(defaultVal)
+            };
+
             var Model = new BuildViewModel
             {
                 Blades = _database.Blades.ToList(),
                 Handles = _database.Handles.ToList(),
                 ReelSeats = _database.ReelSeats.ToList(),
-                Texts = _database.Texts.ToList()
+                Texts = _database.Texts.ToList(),
+                Cart = CustomerCart
             };
-
-            if (Session["Product"] == null)
-            {
-                var Product = new Product { Price = 0, Weight = 0 };
-
-                Session["Product"] = Product;
-
-                Model.Product = Session["Product"] as Product;
-
-                return View(Model);
-            }
-
-            Model.Product = Session["Product"] as Product;
 
             return View(Model);
         }
 
-        public ActionResult ChooseBlade(int? id)
-        {
-            var Product = Session["Product"] as Product;
-
-            Product.ChosenBlade = _database.Blades.Find(id);
-
-            Session["Product"] = Product;
-
-            SummarizeProductInfo();
-
-            return RedirectToAction("Index");
-        }
-
-        public ActionResult ChooseHandle(int? id)
-        {
-            var Product = Session["Product"] as Product;
-
-            Product.ChosenHandle = _database.Handles.Find(id);
-
-            Session["Product"] = Product;
-
-            SummarizeProductInfo();
-
-            return RedirectToAction("Index");
-        }
-
-        public ActionResult ChooseReelSeat(int? id)
-        {
-            var Product = Session["Product"] as Product;
-
-            Product.ChosenReelSeat = _database.ReelSeats.Find(id);
-
-            Session["Product"] = Product;
-
-            SummarizeProductInfo();
-
-            return RedirectToAction("Index");
-        }
-
-        public ActionResult ChooseAccessory(int? id) {
-            return RedirectToAction("Accessories");
-        }
-
         public ActionResult Accessories()
         {
-
-            //User.UserActivities.Where(UserActivity => UserActivity.Activity == activity
-
             var Model = new AccessoriesViewModel
             {
                 Cases = _database.Accessories.Where(a => a.Type == Accessory.AccessoryType.Case).ToList(),
                 Holders = _database.Accessories.Where(a => a.Type == Accessory.AccessoryType.Holder).ToList(),
                 RodTubes = _database.Accessories.Where(a => a.Type == Accessory.AccessoryType.RodTube).ToList(),
                 Texts = _database.Texts.ToList(),
-                Product = Session["Product"] as Product
             };
 
             return View(Model);
         }
 
-        public void SummarizeProductInfo()
+        #region Helpers
+
+        public void AuthorizeCookie()
         {
-            var Product = Session["Product"] as Product;
-
-            Product.Price = 0;
-            Product.Weight = 0;
-
-            if (Product.ChosenBlade != null)
+            if (Request.Cookies["Cart"] == null)
             {
-                Product.Price += Product.ChosenBlade.Price;
-                Product.Weight += Product.ChosenBlade.Weight;
+                Response.Cookies["Cart"]["Blade"] = "1";
+                Response.Cookies["Cart"]["Handle"] = "1";
+                Response.Cookies["Cart"]["ReelSeat"] = "1";
+                Response.Cookies["Cart"].Expires = DateTime.Now.AddDays(30);
             }
-
-            if (Product.ChosenHandle != null)
-            {
-                Product.Price += Product.ChosenHandle.Price;
-                Product.Weight += Product.ChosenHandle.Weight;
-            }
-
-            if (Product.ChosenReelSeat != null)
-            {
-                Product.Price += Product.ChosenReelSeat.Price;
-                Product.Weight += Product.ChosenReelSeat.Weight;
-            }
-
-            Session["Product"] = Product;
         }
 
-        
+        public void ChangeCookie(int blade, int handle, int reelSeat)
+        {
+            Response.Cookies["Cart"]["Blade"] = blade.ToString();
+            Response.Cookies["Cart"]["Handle"] = handle.ToString();
+            Response.Cookies["Cart"]["ReelSeat"] = reelSeat.ToString();
+            Response.Cookies["Cart"].Expires = DateTime.Now.AddDays(30);
+        }
+
+        #endregion  
     }
 }

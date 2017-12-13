@@ -158,7 +158,6 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccordionDesignController.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\DevController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -188,7 +187,7 @@
     <Compile Include="Models\Component.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Entities\ReelSeat.cs" />
-    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Entities\Text.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -197,7 +196,6 @@
     <Compile Include="ViewModels\DevViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\AccordionDesign.css" />
     <Content Include="Content\Images\Home\Fish1.png" />
     <Content Include="Content\Images\Home\Fish2.png" />
     <Content Include="Content\Images\Home\Fish3.png" />
@@ -313,6 +311,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Cookie\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

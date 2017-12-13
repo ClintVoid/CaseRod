@@ -17,7 +17,7 @@ namespace CaseRod.Controllers
         // GET: Demo
         public ActionResult Index()
         {
-            return View(db.Blades.ToList());
+            return View();
         }
 
         // GET: Demo/Details/5
