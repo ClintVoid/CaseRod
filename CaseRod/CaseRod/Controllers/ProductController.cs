@@ -29,7 +29,16 @@ namespace CaseRod.Controllers
                 Blades = _database.Blades.ToList(),
                 Handles = _database.Handles.ToList(),
                 ReelSeats = _database.ReelSeats.ToList(),
-                Texts = _database.Texts.ToList(),
+                InfoHeader = _database.Texts.Find("InfoHeader"),
+                InfoBladesHeader = _database.Texts.Find("InfoBladesHeader"),
+                InfoHandlesHeader = _database.Texts.Find("InfoHandlesHeader"),
+                InfoReelsHeader = _database.Texts.Find("InfoReelsHeader"),
+                InfoBody = _database.Texts.Find("InfoBody"),
+                InfoBladesBody = _database.Texts.Find("InfoBladesBody"),
+                InfoHandlesBody = _database.Texts.Find("InfoHandlesBody"),
+                InfoReelsBody = _database.Texts.Find("InfoReelsBody"),
+
+
                 Cart = CustomerCart
             };
 
@@ -43,7 +52,7 @@ namespace CaseRod.Controllers
                 Cases = _database.Accessories.Where(a => a.Type == Accessory.AccessoryType.Case).ToList(),
                 Holders = _database.Accessories.Where(a => a.Type == Accessory.AccessoryType.Holder).ToList(),
                 RodTubes = _database.Accessories.Where(a => a.Type == Accessory.AccessoryType.RodTube).ToList(),
-                Texts = _database.Texts.ToList(),
+                InfoAccessories = _database.Texts.Find("InfoAccessories")
             };
 
             return View(Model);
