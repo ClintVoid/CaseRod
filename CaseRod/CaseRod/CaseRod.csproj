@@ -199,9 +199,9 @@
     <Compile Include="ViewModels\BuildViewModel.cs" />
     <Compile Include="ViewModels\DevViewModel.cs" />
     <Compile Include="ViewModels\PaymentViewModel.cs" />
+    <Compile Include="ViewModels\TextsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\AccordionDesign.css" />
     <Content Include="Content\Images\Home\Fish1.jpg" />
     <Content Include="Content\Images\Home\Fish2.jpg" />
     <Content Include="Content\Images\Home\Fish3.jpg" />
@@ -294,7 +294,6 @@
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
-    <Content Include="Views\AccordionDesign\Accordion.cshtml" />
     <Content Include="Views\Dev\Index.cshtml" />
     <Content Include="Views\Dev\CreateBlade.cshtml" />
     <Content Include="Views\Dev\CreateHandle.cshtml" />
@@ -307,10 +306,6 @@
     <Content Include="Views\Demo\Details.cshtml" />
     <Content Include="Views\Demo\Edit.cshtml" />
     <Content Include="Views\Demo\Index.cshtml" />
-    <Content Include="Views\AccordionDesign\_Blades.cshtml" />
-    <Content Include="Views\AccordionDesign\_Reelseats.cshtml" />
-    <Content Include="Views\AccordionDesign\_Handles.cshtml" />
-    <Content Include="Views\AccordionDesign\_Summary.cshtml" />
     <Content Include="Views\Dev\EditTextOld.cshtml" />
     <Content Include="Views\Dev\EditText.cshtml" />
     <Content Include="Views\Product\_DemoView.cshtml" />
@@ -320,7 +315,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Cookie\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

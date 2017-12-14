@@ -21,9 +21,9 @@ namespace CaseRod.Controllers
 
         public ActionResult About()
         {
-            var Model = new HomeViewModel
+            var Model = new TextsViewModel
             {
-                Texts = _database.Texts.ToList()
+                AboutText = _database.Texts.Find("AboutText")
             };
 
             return View(Model);
@@ -31,9 +31,9 @@ namespace CaseRod.Controllers
 
         public ActionResult Contact()
         {
-            var Model = new HomeViewModel
+            var Model = new TextsViewModel
             {
-                Texts = _database.Texts.ToList()
+                ContactText = _database.Texts.Find("ContactText")
             };
 
             return View(Model);
