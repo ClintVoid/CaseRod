@@ -312,7 +312,6 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\Accessories.cshtml" />
     <Content Include="Views\Home\PaymentShipping.cshtml" />
-    <Content Include="Views\Shared\_Cookie.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
