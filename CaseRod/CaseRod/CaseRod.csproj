@@ -205,7 +205,6 @@
     <Content Include="Content\Images\Home\Fish1.jpg" />
     <Content Include="Content\Images\Home\Fish2.jpg" />
     <Content Include="Content\Images\Home\Fish3.jpg" />
-    <Content Include="Content\Images\View\StartPage\Background1.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\Blades\default.png" />
@@ -235,9 +234,10 @@
     <Content Include="Content\Images\ReelSeats\RullfasteGold.png" />
     <Content Include="Content\Images\ReelSeats\RullfasteLightWood.png" />
     <Content Include="Content\Images\ReelSeats\RullfasteRed.png" />
-    <Content Include="Content\Images\View\StartPage\One-handed.jpg" />
     <Content Include="Content\Images\View\StartPage\ContactPic.png" />
+    <Content Include="Content\Images\View\StartPage\One-handed.jpg" />
     <Content Include="Content\Images\View\StartPage\PaymentShippingPic.png" />
+    <Content Include="Content\Images\View\StartPage\StartBuild.jpg" />
     <Content Include="Content\Images\View\StartPage\StartCreatingText.png" />
     <Content Include="Content\Images\View\StartPage\StartCreating.png" />
     <Content Include="Content\Images\View\StartPage\Two-handed.jpg" />
