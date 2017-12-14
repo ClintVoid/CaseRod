@@ -199,6 +199,7 @@
     <Compile Include="ViewModels\BuildViewModel.cs" />
     <Compile Include="ViewModels\DevViewModel.cs" />
     <Compile Include="ViewModels\PaymentViewModel.cs" />
+    <Compile Include="ViewModels\TextsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\AccordionDesign.css" />

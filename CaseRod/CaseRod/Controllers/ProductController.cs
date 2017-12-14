@@ -13,19 +13,15 @@ namespace CaseRod.Controllers
     {
         private ApplicationDbContext _database = new ApplicationDbContext();
 
-       
-
-
         public ActionResult Index()
         {
-            AuthorizeCookie();
+            HttpCookie Cookie = AuthorizeCookie();
 
-            int defaultVal = 1;
             var CustomerCart = new Cart
             {
-                Blade = _database.Blades.Find(defaultVal),
-                Handle = _database.Handles.Find(defaultVal),
-                ReelSeat = _database.ReelSeats.Find(defaultVal)
+                Blade = _database.Blades.Find(StringToInt(Cookie.Values["Blade"])),
+                Handle = _database.Handles.Find(StringToInt(Cookie.Values["Handle"])),
+                ReelSeat = _database.ReelSeats.Find(StringToInt(Cookie.Values["ReelSeat"]))
             };
 
             var Model = new BuildViewModel
@@ -55,15 +51,23 @@ namespace CaseRod.Controllers
 
         #region Helpers
 
-        public void AuthorizeCookie()
+        public HttpCookie AuthorizeCookie()
         {
-            if (Request.Cookies["Cart"] == null)
+            HttpCookie Cookie = Request.Cookies["Cart"];
+
+            if (Cookie == null || String.IsNullOrEmpty(Cookie.Value))
             {
-                Response.Cookies["Cart"]["Blade"] = "1";
-                Response.Cookies["Cart"]["Handle"] = "1";
-                Response.Cookies["Cart"]["ReelSeat"] = "1";
-                Response.Cookies["Cart"].Expires = DateTime.Now.AddDays(30);
+                Cookie = new HttpCookie("Cart");
+
+                Cookie.Values["Blade"] = "0";
+                Cookie.Values["Handle"] = "0";
+                Cookie.Values["ReelSeat"] = "0";
+                Cookie.Expires = DateTime.Now.AddDays(90);
+
+                Response.Cookies.Add(Cookie);
             }
+
+            return Cookie; 
         }
 
         public void ChangeCookie(int blade, int handle, int reelSeat)
@@ -72,6 +76,11 @@ namespace CaseRod.Controllers
             Response.Cookies["Cart"]["Handle"] = handle.ToString();
             Response.Cookies["Cart"]["ReelSeat"] = reelSeat.ToString();
             Response.Cookies["Cart"].Expires = DateTime.Now.AddDays(30);
+        }
+
+        public int StringToInt(string value)
+        {
+            return Convert.ToInt32(value);
         }
 
         #endregion  
