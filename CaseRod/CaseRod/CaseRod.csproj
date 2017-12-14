@@ -312,6 +312,9 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\Accessories.cshtml" />
     <Content Include="Views\Home\PaymentShipping.cshtml" />
+    <Content Include="Views\Dev\EditBlade.cshtml" />
+    <Content Include="Views\Dev\EditHandle.cshtml" />
+    <Content Include="Views\Dev\EditReelSeat.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

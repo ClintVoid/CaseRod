@@ -119,6 +119,7 @@ namespace CaseRod.Controllers
         #endregion
 
         #region Create
+        #region CreateBlade
         public ActionResult CreateBlade()
         {
             return View();
@@ -136,7 +137,8 @@ namespace CaseRod.Controllers
 
             return View(blade);
         }
-
+        #endregion
+        #region CreateHandle
         public ActionResult CreateHandle()
         {
             return View();
@@ -154,7 +156,8 @@ namespace CaseRod.Controllers
 
             return View(handle);
         }
-
+        #endregion
+        #region CreateReelSeat
         public ActionResult CreateReelSeat()
         {
             return View();
@@ -173,8 +176,57 @@ namespace CaseRod.Controllers
             return View(reelSeat);
         }
         #endregion
+        #endregion
 
         #region Edit
+        #region EditBlade
+        public ActionResult EditBlade(int? id)
+        {
+            if (id == null)
+                return RedirectToAction("Index");
+
+            Blade blade = _database.Blades.Find(id);
+
+            if(blade==null)
+                return RedirectToAction("Index");
+
+            return View(blade);
+        }
+        [HttpPost]
+        public ActionResult EditBlade([Bind(Include = "ID, Name, PartNumber,Image,Weight,Price ")] Blade blades)
+        {
+            if(ModelState.IsValid)
+            {
+                _database.Entry(blades).State = EntityState.Modified;
+                _database.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(blades);
+        }
+        #endregion
+        #region EditHandle
+        public ActionResult EditHandle()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult EditHandle([Bind(Include = "ID, Name, PartNumber,Image,Weight,Price ")] Handle handles)
+        {
+            return View();
+        }
+        #endregion
+        #region EditReelSeat
+        public ActionResult EditReelSeat()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult EditReelSeat([Bind(Include = "ID, Name, PartNumber,Image,Weight,Price ")] ReelSeat reelseat)
+        {
+            return View();
+        }
+        #endregion
+        #region EditText
         public ActionResult EditText(string name)
         {
             if (name == null)
@@ -200,6 +252,7 @@ namespace CaseRod.Controllers
             }
             return View(texts);
         }
+        #endregion
         #endregion
     }
 }
