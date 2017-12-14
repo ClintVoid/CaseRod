@@ -52,7 +52,8 @@ namespace CaseRod.Controllers
                 Cases = _database.Accessories.Where(a => a.Type == Accessory.AccessoryType.Case).ToList(),
                 Holders = _database.Accessories.Where(a => a.Type == Accessory.AccessoryType.Holder).ToList(),
                 RodTubes = _database.Accessories.Where(a => a.Type == Accessory.AccessoryType.RodTube).ToList(),
-                InfoAccessories = _database.Texts.Find("InfoAccessories")
+                AccessoriesHeader = _database.Texts.Find("AccessoriesHeader"),
+                AccessoriesBody = _database.Texts.Find("AccessoriesBody")
             };
 
             return View(Model);
