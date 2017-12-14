@@ -1,16 +1,9 @@
-﻿@model CaseRod.ViewModels.HomeViewModel
+﻿@model CaseRod.ViewModels.TextsViewModel
 @{
     ViewBag.Title = "About";
 }
 <h2>@ViewBag.Title.</h2>
 
-@foreach (var textitem in Model.Texts)
-{
-    if (textitem.TextID == 4)
-    {
-        @textitem.Content
-    }
-}
-
+<p>@Model.AboutText.Content</p>
 
 
