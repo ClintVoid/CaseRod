@@ -59,6 +59,18 @@ namespace CaseRod.Controllers
             return View(Model);
         }
 
+      public ActionResult Catalogue()
+      {
+          var Model = new DevViewModel
+          {
+              Blades = _database.Blades.ToList(),
+              Handles = _database.Handles.ToList(),
+              ReelSeats = _database.ReelSeats.ToList()
+          };
+
+          return View(Model);
+      }
+
         #region Helpers
 
         public HttpCookie AuthorizeCookie()

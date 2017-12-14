@@ -1,0 +1,171 @@
+﻿@model CaseRod.ViewModels.DevViewModel
+@{
+    ViewBag.Title = "Catalogue";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+@Html.Partial("_DemoView")
+
+
+<body style="background-color:#f2f2f2">
+    <h2>Product Catalogue</h2>
+
+    <div style="padding: 0px 10px 0px 10px; margin-bottom:20px; width:100%">
+        <a class="btn btn-default" href="#Blades" data-toggle="tab">Blades</a>
+        <a class="btn btn-default" href="#Handles" data-toggle="tab">Handles</a>
+        <a class="btn btn-default" href="#ReelSeats" data-toggle="tab">ReelSeats</a>
+    </div>
+
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade active in" id="Blades">
+            <div class="container">
+                <div class="row">
+                @foreach (var item in Model.Blades)
+                {
+                    <div style="padding: 0px 10px 0px 10px; margin-bottom:20px" class="col-lg-15 col-md-3 col-sm-4 col-xs-6">
+                        <div style="background-color:white; width:100%; height:100%; box-shadow: 0 2px 15px rgba(0,0,0,0.1)">
+
+                            <img src="~/Content/Images/Blades/@item.Image" style="width:100%;height:230px; border:10px solid; border-color:white" onclick="Choose()">
+
+
+                            <div class="bottom">
+                                <div class="heading">@item.Name</div>
+                                <div class="info">Part Number</div>
+                                <div class="style">@item.Weight g / 15.7 ft</div>
+                                <div class="price" style="font-size:22px; align-content:center">@item.Price :-</div>
+                                <div style="padding:10px">
+                                    <img src="~/Content/Images/Icons/info-grey.png" data-toggle="modal" data-target="#myModal" data-price="@item.Price" data-image="@item.Image" data-name="@item.Name" data-weight="@item.Weight" data-component="Blades" style="float:left" onmouseover="infoHover(this)" onmouseout="infoNormal(this)">
+                                    <button style="float:right" class="btn btn-default" onclick="addToCart('@item.Image', '@item.Price', '@item.Weight', '@item.Name', 'blade')">Add to Cart</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="Handles">
+            @foreach (var item in Model.Handles)
+            {
+                <div style="padding: 0px 10px 0px 10px; margin-bottom:20px" class="col-lg-15 col-md-3 col-sm-4 col-xs-6">
+                    <div style="background-color:white; width:100%; height:100%; box-shadow: 0 2px 15px rgba(0,0,0,0.1)">
+                        <a data-toggle="modal" data-target=@("#Modal"+item.Name)>
+                            <img src="~/Content/Images/Handles/@item.Image" style="width:100%;height:230px; border:10px solid; border-color:white">
+                        </a>
+                        <div class="bottom">
+                            <div class="heading">@item.Name</div>
+                            <div class="info">Part Number</div>
+                            <div class="style">@item.Weight g / 15.7 ft</div>
+                            <div class="price" style="font-size:22px; align-content:center">@item.Price :-</div>
+
+                            <div style="padding:10px">
+                                <img src="~/Content/Images/Icons/info-grey.png" data-toggle="modal" data-target="#myModal" data-price="@item.Price" data-image="@item.Image" data-name="@item.Name" data-weight="@item.Weight" data-component="Handles" style="float:left" onmouseover="infoHover(this)" onmouseout="infoNormal(this)">
+                                <button style="float:right" class="btn btn-default" onclick="addToCart('@item.Image', '@item.Price', '@item.Weight', '@item.Name', 'handle')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="tab-pane fade" id="ReelSeats">
+            @foreach (var item in Model.ReelSeats)
+            {
+                <div style="padding: 0px 10px 0px 10px; margin-bottom:20px" class="col-lg-15 col-md-3 col-sm-4 col-xs-6">
+                    <div style="background-color:white; width:100%; height:100%; box-shadow: 0 2px 15px rgba(0,0,0,0.1)">
+                        <a data-toggle="modal" data-target=@("#Modal"+item.Name)>
+                            <img src="~/Content/Images/ReelSeats/@item.Image" style="width:100%;height:230px; border:10px solid; border-color:white">
+                        </a>
+
+                        <div class="bottom">
+                            <div class="heading">@item.Name</div>
+                            <div class="info">Part Number</div>
+                            <div class="style">@item.Weight g / 15.7 ft</div>
+                            <div class="price" style="font-size:22px; align-content:center">@item.Price :-</div>
+
+                            <div style="padding:10px">
+                                <img src="~/Content/Images/Icons/info-grey.png" data-toggle="modal" data-target="#myModal" data-price="@item.Price" data-image="@item.Image" data-name="@item.Name" data-weight="@item.Weight" data-component="ReelSeats" style="float:left" onmouseover="infoHover(this)" onmouseout="infoNormal(this)">
+                                <button style="float:right" class="btn btn-default" onclick="addToCart('@item.Image', '@item.Price', '@item.Weight', '@item.Name', 'reelSeat')">Add to Cart</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+
+    <div class="modal modal-lg fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Product Name</h4>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<script language="javascript">
+    function infoHover(element) {
+        element.src = "@Url.Content("/Content/Images/Icons/info-blue.png")";
+    }
+    function infoNormal(element) {
+        element.src = "@Url.Content("/Content/Images/Icons/info-grey.png")";
+    }
+
+    function addToCart(image, price, weight, name, component) {
+        var ImagePath;
+
+        switch (component) {
+            case 'blade': ImagePath = "/Content/Images/Blades/" + image; break;
+            case 'handle': ImagePath = "/Content/Images/Handles/" + image; break;
+            case 'reelSeat': ImagePath = "/Content/Images/ReelSeats/" + image; break;
+        }
+
+        document.getElementById(component).src = ImagePath;
+        document.getElementById(component + 'Name').textContent = name;
+        document.getElementById(component + 'Price').textContent = price + " :-";
+        document.getElementById(component + 'Weight').textContent = weight + " g";
+    }
+
+    $('#myModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var image = button.data('image')
+        var price = button.data('price')
+        var weight = button.data('weight')
+        var name = button.data('name')
+        var component = button.data('component')
+        var content = '<img class="col-lg-6   col-sm-12 col-xs-12" src="/Content/Images/' + component + '/' + image + '"/> \
+                       <ul class="list-group col-lg-6"> \
+                            <li class="list-group-item"><strong>Name</strong><span style="float:right">' + name + '</span></li> \
+                            <li class="list-group-item"><strong>Price</strong><span style="float:right">' + price + '</span></li> \
+                            <li class="list-group-item"><strong>Weight</strong><span style="float:right">' + weight + '</span></li> \
+                       </ul> \
+                       <div class="col-lg-6">Proin pulvinar elit vitae maximus iaculis. Aliquam porta ac magna quis tristique. In non pretium lectus, eget finibus velit. Phasellus suscipit gravida libero, tincidunt gravida erat scelerisque in. Phasellus semper risus eget turpis maximus maximus. Proin sit amet ex non sapien viverra gravida. Pellentesque id leo augue.</div>'
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').html('<h3>' + name + '</h3>')
+        modal.find('.modal-body').html(content)
+    })
+</script>
