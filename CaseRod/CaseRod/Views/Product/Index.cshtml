@@ -17,6 +17,7 @@
 @Html.Partial("_DemoView")
 
 <div class="row">
+    <!-- Rod Components -->
     <div class="col-lg-8" style="height:400px; padding: 0 10px 0 10px; margin-bottom:20px">
         <div style="width:100%; height:100%; background-color:white; box-shadow: 0 2px 15px rgba(0,0,0,0.1)">
 
@@ -53,11 +54,13 @@
         </div>
     </div>
 
+    <!-- Rod Summary -->
     <div class="col-lg-4 col-sm-12" style="height:400px; padding: 0 10px 0 10px; margin-bottom:20px">
         <div style="background-color:white; width:100%; height:100%; box-shadow: 0 2px 15px rgba(0,0,0,0.1);">
         </div>
     </div>
 
+    <!-- Header Buttons -->
     <div class="header-buttons col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <a class="btn btn-default" href="#Blades" data-toggle="tab">Blades</a>
         <a class="btn btn-default" href="#Handles" data-toggle="tab">Handles</a>
@@ -152,28 +155,28 @@
 
                     <div class="rod-summary">
                         <div class="text-block">
-                            <h1>@Model.InfoHeader.Content</h1>
-                            <p>@Model.InfoBody.Content</p>
+                            <legend style="padding-bottom:10px"><strong>@Model.InfoHeader.Content</strong></legend>
+                            <p> @Model.InfoBody.Content </p>
                         </div>
                     </div>
 
                     <div class="rod-summary">
                         <div class="text-block">
-                            <h2>@Model.InfoBladesHeader.Content</h2>
+                            <legend style="padding-bottom:10px">@Model.InfoBladesHeader.Content</legend>
                             <p> @Model.InfoBladesBody.Content </p>
                         </div>
                     </div>
 
                     <div class="rod-summary">
                         <div class="text-block">
-                            <h2>@Model.InfoHandlesHeader.Content</h2>
+                            <legend style="padding-bottom:10px"><strong>@Model.InfoHandlesHeader.Content</strong></legend>
                             <p> @Model.InfoHandlesBody.Content </p>
                         </div>
                     </div>
 
                     <div class="rod-summary">
                         <div class="text-block">
-                            <h2>@Model.InfoReelsHeader.Content</h2>
+                            <legend style="padding-bottom:10px">@Model.InfoReelsHeader.Content</legend>
                             <p> @Model.InfoReelsBody.Content </p>
                         </div>
                     </div>
