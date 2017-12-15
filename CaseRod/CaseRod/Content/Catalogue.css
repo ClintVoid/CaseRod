@@ -1,6 +1,9 @@
 ﻿.header-text,
 .header-buttons,
 .product-wrapper,
+.rod-wrapper,
+.rod-components,
+.rod-summary,
 .weight {
     padding: 0 10px 0 10px;
     margin-bottom:20px;
@@ -10,9 +13,14 @@
     padding-left:10px;
 }
 
-.product {
+.product,
+.text-block {
     background-color:white;
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.text-block {
+    padding: 10px;
 }
 
 .product-image {

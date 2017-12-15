@@ -144,25 +144,45 @@
                 </div>
             </div>
         </div>
+
+        <!-- Info -->
+        <div class="tab-pane fade" id="Info">
+            <div class="container">
+                <div class="row">
+
+                    <div class="rod-summary">
+                        <div class="text-block">
+                            <h1>@Model.InfoHeader.Content</h1>
+                            <p>@Model.InfoBody.Content</p>
+                        </div>
+                    </div>
+
+                    <div class="rod-summary">
+                        <div class="text-block">
+                            <h2>@Model.InfoBladesHeader.Content</h2>
+                            <p> @Model.InfoBladesBody.Content </p>
+                        </div>
+                    </div>
+
+                    <div class="rod-summary">
+                        <div class="text-block">
+                            <h2>@Model.InfoHandlesHeader.Content</h2>
+                            <p> @Model.InfoHandlesBody.Content </p>
+                        </div>
+                    </div>
+
+                    <div class="rod-summary">
+                        <div class="text-block">
+                            <h2>@Model.InfoReelsHeader.Content</h2>
+                            <p> @Model.InfoReelsBody.Content </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
     </div>
-</div>
-
-
-<div class="tab-pane fade" id="Info">
-
-    <h1>@Model.InfoHeader.Content</h1>
-    <p>@Model.InfoBody.Content</p>
-    <br />
-    <h2>@Model.InfoBladesHeader.Content</h2>
-    <p> @Model.InfoBladesBody.Content </p>
-    <br />
-    <h2>@Model.InfoHandlesHeader.Content</h2>
-    <p> @Model.InfoHandlesBody.Content </p>
-    <br />
-    <h2>@Model.InfoReelsHeader.Content</h2>
-    <p> @Model.InfoReelsBody.Content </p>
-
-
 </div>
 
 <!-- Modal -->
